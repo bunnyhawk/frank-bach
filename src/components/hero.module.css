@@ -1,0 +1,29 @@
+.hero {
+  position: relative;
+  text-align: center;
+  
+}
+
+.heroHeadline {
+  height: 100vh;
+  top: 0;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroHeadline h3 {
+  max-width: 500px
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 1.125em;
+  font-weight: bold;
+}
+
+.heroImageWrapper {
+  margin-bottom: 250px;
+}

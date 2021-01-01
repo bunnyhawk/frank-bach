@@ -1,0 +1,16 @@
+.footer {
+  padding-bottom: 71px;
+}
+
+.footerNav {
+  padding-top: 64px;
+  padding-bottom: 89px;
+}
+
+.footerNav svg {
+  height: 24px;
+}
+
+.footerNav svg path {
+  fill: white;
+}

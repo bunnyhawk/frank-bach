@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AllianceNo1-Bold";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/AllianceNo1-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "AllianceNo1-Light";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/AllianceNo1-Light.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "AllianceNo2-Light";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/AllianceNo2-Light.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "DrukWide-Bold";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/DrukWide-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono-Bold";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono-BoldItalic";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono-Italic";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono-Regular";
+  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "AllianceNo1-Light", sans-serif;
+  font-size: 1em;
+  line-height: 1.65;
+  color: #373F49;
+  /* background: #eee; */
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "AllianceNo1-Bold", sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+a {
+  color: currentColor;
+  display: inline-block;
+  position: relative;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #20A6FF;
+}
+
+a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: currentColor;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+a:active:after,
+a:focus:after,
+a:hover:after {
+  color: #20A6FF;
+  width: 100%; 
+  left: 0; 
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  width: calc(100% - 10vmin);
+  margin: 0 auto;
+  padding: 5vmin 0;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  transition: transform 300ms ease-in-out;
+  transform: translateY(0);
+  z-index: 100;
+  width: 100%;
+}
+
+#header.hide {
+  transform: translateY(-100%);
+}
+
+/**
+ * article grid
+ */
+.article-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5vmin;
+}
+
+/**
+ *
+ */
+.section-headline {
+  padding: 0 0 0.4em 0;
+  margin: 0 0 5vmin 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/**
+ *
+ */
+.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+  .list-inline li {
+    display: inline-block;
+  }
