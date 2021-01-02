@@ -1,0 +1,14 @@
+.carousel {
+  max-width: 800px;
+}
+.carouselLeftButton {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.carouselRightButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}

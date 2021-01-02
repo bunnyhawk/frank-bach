@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import TopBackground from './top-bg';
+// import TopBackground from './top-bg';
 
 import styles from './footer.module.css'
 
@@ -13,57 +13,59 @@ const Footer = ({ workTitles }) => {
   const year = new Date().getFullYear();
   return (
     <>
-      <TopBackground />
+      {/* <TopBackground /> */}
 
-      <footer className={[styles.footer, "bg-black text-white px-10"].join(' ')}>
+      <footer className={[styles.footer, "bg-black text-white relative"].join(' ')}>
         <div className="container m-auto">
           <nav role="navigation" className={[styles.footerNav, 'text-sm lh-2 flex'].join(' ')}>
-            <div className="container flex m-auto">
-              <Link to="/" className="font-header flex-1">Home</Link>
+            <div className="container flex m-auto items-start">
+              <div className="flex-1">
+                <Link to="/" className="font-header text-white">Home</Link>
+              </div>
               <ul className="flex-1">
                 <li className="font-header">
-                  <Link to="/work/">Work</Link>
+                  <Link to="/work/" className="text-white">Work</Link>
                 </li>
                 {workTitles && workTitles.map(({ node }) => (
                   <li key={node.slug}>
-                    <Link to={`/work/#${node.slug}`}>{node.title}</Link>
+                    <Link to={`/work/#${node.slug}`} className="text-white">{node.title}</Link>
                   </li>
                 ))}
               </ul>
               <ul className="font-header flex-1">
                 <li>
-                  <Link to="/speaking/">Speaking</Link>
+                  <Link to="/speaking/" className="text-white">Speaking</Link>
                 </li>
                 <li>
-                  <Link to="/blog/">Blog</Link>
+                  <Link to="/blog/" className="text-white">Blog</Link>
                 </li>
                 <li>
-                  <Link to="/shop/">Shop</Link>
+                  <Link to="/shop/" className="text-white">Shop</Link>
                 </li>
                 <li>
-                  <Link to="/contact/">Contact</Link>
+                  <Link to="/contact/" className="text-white">Contact</Link>
                 </li>
               </ul>
               <div className="flex-1">
                 <div className="font-header mb-4">Follow along</div>
                 <ul className="flex">
                   <li className="mr-5">
-                    <Link to="https://twitter.com/francois_bach">
+                    <a href="https://twitter.com/francois_bach" className="text-white">
                       <Twitter />
                       <span className="sr-only">Twitter</span>
-                    </Link>
+                    </a>
                   </li>
                   <li className="mr-5">
-                    <Link to="https://instagram.com/francoisbach_">
+                    <a href="https://instagram.com/francoisbach_">
                       <Instagram />
                       <span className="sr-only">Instagram</span>
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="https://www.linkedin.com/in/francoisbach/">
+                    <a href="https://www.linkedin.com/in/francoisbach/" className="text-white">
                       <LinkedIn />
                       <span className="sr-only">LinkedIn</span>
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>

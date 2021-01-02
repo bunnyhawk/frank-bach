@@ -2,6 +2,19 @@
   padding-bottom: 71px;
 }
 
+.footer:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4vw;
+  background-image: url(/top-black-bg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  position: absolute;
+  top: -3vw;
+}
+
 .footerNav {
   padding-top: 64px;
   padding-bottom: 89px;

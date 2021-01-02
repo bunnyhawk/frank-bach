@@ -1,13 +1,22 @@
-.homeCopy {
-  max-width: 830px !important;
+.homeCopy h2 {
+  margin-left: -27px;
 }
+
+.homeCopy h3 {
+  margin-bottom: 30px;
+}
+
 .homeCopyWrapper:after {
   content: '';
   display: block;
   width: 100%;
-  height: 150px;
+  height: 10vw;
   background-image: url(/bottom-black-bg.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+
+.homeCopyButton {
+  background-color: #20A6FF;
 }

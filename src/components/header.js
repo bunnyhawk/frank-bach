@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
@@ -23,32 +23,31 @@ const Header = ({ children, workTitles }) => {
     300
   )
 
-  return useMemo(
-    () => (
+  return (
 
-      <header id="header" className={[hideOnScroll ? 'visible' : 'hide', "bg-white  px-10"].join(' ')}>
-        <Container>
-          <div className="flex items-center">
-            <div className="flex-1 font-header text-lg"><Link to="/">Frank Bach</Link></div>
-            <div className="flex-1 text-center">
-              <div className="flex items-center my-7">
-                <div className="flex-1 text-lg">
-                  <Navigation />
-                </div>
-
-                <ul className="flex">
-                  <li className="flex-1 mx-4"><Twitter /></li>
-                  <li className="flex-1 mx-4"><Instagram /></li>
-                </ul>
-
+    <header id="header" className={[hideOnScroll ? 'visible' : 'hide', "bg-white  px-10"].join(' ')}>
+      <Container>
+        <div className="flex items-center">
+          <div className="flex-1 font-header text-lg"><Link to="/">Frank Bach</Link></div>
+          <div className="flex-1 text-center">
+            <div className="flex items-center my-7">
+              <div className="flex-1 text-lg">
+                <Navigation />
               </div>
+
+              <ul className="flex">
+                <li className="flex-1 mx-4"><Twitter /></li>
+                <li className="flex-1 mx-4"><Instagram /></li>
+              </ul>
+
             </div>
           </div>
-        </Container>
-      </header>
+        </div>
+      </Container>
+    </header>
 
-    )
   )
+
 }
 
 

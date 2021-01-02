@@ -8,7 +8,10 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import Brands from '../components/brands'
 import TopBackground from '../components/top-bg';
-import BottomBackground from '../components/bottom-bg';
+import LetsWork from '../components/lets-work';
+import Interviews from '../components/interviews';
+import Hype from '../components/hype';
+import CtaButtonLink from '../components/cta-button-link'
 
 import styles from './home.module.css';
 
@@ -18,36 +21,43 @@ class RootIndex extends React.Component {
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const workTitles = get(this, 'props.data.allContentfulWork.edges')
     const brands = get(this, 'props.data.allContentfulBrands.edges[0].node.logos')
-    const storyCopy = get(this, 'props.data.allContentfulHomePage.edges[0].node.story.childMarkdownRemark')
-    const speakingCopy = get(this, 'props.data.allContentfulHomePage.edges[0].node.speaking.childMarkdownRemark')
+    const homeContent = get(this, 'props.data.allContentfulHomePage.edges[0].node')
+    const storyCopy = get(homeContent, 'story.childMarkdownRemark')
+    const speakingCopy = get(homeContent, 'speaking.childMarkdownRemark')
+    const hypeContent = get(this, 'props.data.allContentfulHypeItem.edges')
 
     return (
       <Layout location={this.props.location} workTitles={workTitles}>
-        <div style={{ background: '#fff' }}>
-          <Container>
-            <Helmet title={siteTitle} />
-            <Hero data={author.node} />
-            <Brands data={brands} />
+
+        <Container>
+          <Helmet title={siteTitle} />
+          <Hero data={author.node} />
+          <Brands data={brands} />
+        </Container>
+        <TopBackground />
+        <div className={[styles.homeCopyWrapper, "bg-black text-white pt-12"].join(' ')}>
+          <Container className={styles.homeCopy} isNarrow>
+            <h2 className="font-space text-sm uppercase mb-4">My Story</h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: storyCopy.html,
+              }}
+            />
+            <h2 className="font-space text-sm uppercase mb-4 mt-12">Speaking Engagements</h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: speakingCopy.html,
+              }}
+            />
+            <CtaButtonLink text="Want to chat? Let's talk! &#8594;" to="/contact" />
           </Container>
-          <TopBackground />
-          <div className={[styles.homeCopyWrapper, "bg-black text-white pt-12"].join(' ')}>
-            <Container className={styles.homeCopy}>
-              <h2>My Story</h2>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: storyCopy.html,
-                }}
-              />
-              <h2>Speaking Engagements</h2>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: speakingCopy.html,
-                }}
-              />
-              <button className="mb-12">Want to chat? Let's talk! &#8594;</button>
-            </Container>
-          </div>
         </div>
+        <Interviews
+          interviewWebList={homeContent.interviewWeb}
+          interviewPodcastList={homeContent.interviewPodcast}
+        />
+        <Hype data={hypeContent} />
+        <LetsWork />
       </Layout>
     )
   }
@@ -92,6 +102,7 @@ export const pageQuery = graphql`
       edges {
         node {
           logos {
+            contentful_id
             title
             file {
               url
@@ -119,6 +130,42 @@ export const pageQuery = graphql`
           speaking {
             childMarkdownRemark {
               html
+            }
+          }
+          interviewWeb {
+            contentful_id
+            linkText
+            linkHref
+          }
+          interviewPodcast {
+            contentful_id
+            linkText
+            linkHref
+          }
+        }
+      }
+    }
+    allContentfulHypeItem(
+      filter: {}
+    ) {
+      edges {
+        node {
+          contentful_id
+          name
+          title
+          quote {
+            childMarkdownRemark {
+              html
+            }
+          }
+          picture {
+            title
+            fluid(
+              maxWidth: 100
+              maxHeight: 100
+              resizingBehavior: PAD
+            ) {
+              ...GatsbyContentfulFluid
             }
           }
         }

@@ -79,26 +79,27 @@ h3 {
 }
 
 a {
-  color: currentColor;
+  color: #20A6FF;
   display: inline-block;
   position: relative;
 }
 
-a:active,
+/* a:active,
 a:focus,
 a:hover {
-  color: #20A6FF;
-}
+  color: header;
+} */
 
 a:after {    
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
+  color: #20A6FF;
   content: "";
   display: block;
   height: 2px;
   left: 50%;
   position: absolute;
-  background: currentColor;
+  background: #20A6FF;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -106,9 +107,29 @@ a:after {
 a:active:after,
 a:focus:after,
 a:hover:after {
-  color: #20A6FF;
   width: 100%; 
   left: 0; 
+}
+
+header a {
+  color: currentColor;
+}
+
+header a:active,
+header a:focus,
+header a:hover {
+  color: #20A6FF;
+}
+
+header a:active:after,
+header a:focus:after,
+header a:hover:after {
+  color: #20A6FF;
+}
+
+h2,
+h3 {
+  line-height: 1.4;
 }
 
 p {

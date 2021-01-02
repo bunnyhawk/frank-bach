@@ -17,6 +17,6 @@ export default ({ data }) => (
         backgroundColor={true}
       />
     </div>
-    <p className="font-space uppercase text-sm text-gray-400">I’ve worked with some of the world’s most loved brands and products</p>
+    <p className="font-space uppercase text-sm text-gray-400 mb-8">I’ve worked with some of the world’s most loved brands and products</p>
   </div>
 )
