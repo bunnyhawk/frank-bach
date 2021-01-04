@@ -8,9 +8,6 @@ import styles from './hype.module.css'
 
 
 const Hype = ({ data }) => {
-
-  console.log(data)
-
   return (
     <Container>
       <CarouselProvider
@@ -41,12 +38,14 @@ const Hype = ({ data }) => {
             </Slide>
           ))}
         </Slider>
-        <ButtonBack className={styles.carouselLeftButton}>
-          {/* <img src="../../static/left-arrow.png" alt="Left Arrow" /> */}
+        <ButtonBack className={[styles.carouselButton, styles.carouselLeftButton].join(' ')}>
+          <img src="/left-arrow.png" alt="Left Arrow" />
           <span className="sr-only">Back</span>
-          Back
         </ButtonBack>
-        <ButtonNext className={styles.carouselRightButton}>Next</ButtonNext>
+        <ButtonNext className={[styles.carouselButton, styles.carouselRightButton].join(' ')}>
+          <img src="/right-arrow.png" alt="Right Arrow" />
+          <span className="sr-only">Next</span>
+        </ButtonNext>
       </CarouselProvider>
     </Container>
   );

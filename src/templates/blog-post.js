@@ -4,8 +4,10 @@ import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-
+import Container from '../components/container'
 import Layout from '../components/layout'
+import ReadMore from '../components/read-more'
+
 import heroStyles from '../components/hero.module.css'
 
 
@@ -16,31 +18,43 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <Container>
           <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div className={heroStyles.hero}>
+          <div className={[heroStyles.hero, 'mb-10'].join(' ')}>
             <Img
               className={heroStyles.heroImage}
               alt={post.title}
               fluid={post.heroImage.fluid}
             />
           </div>
-          <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
+          <div className="absolute w-40">
+            <a
+              className="block mx-auto w-32 text-center"
+              href={`https://twitter.com/${post.author.twitter}`}
+              rel="noreferrer"
+              target="_blank"
             >
-              {post.publishDate}
-            </p>
+              <Img
+                className="block w-24 mx-auto mb-3"
+                alt={post.author.image.title}
+                fluid={post.author.image.fluid}
+              />
+              <div className="font-header text-base text-black">{post.author.name}</div>
+              <div className="text-xs text-blu uppercase pb-2">Follow on Twitter</div>
+            </a>
+          </div>
+
+          <Container isNarrow className="blog mb-40">
+            <div className="font-space text-gray-400 text-sm uppercase">{post.publishDate} / {post.category}</div>
+            <h1 className="mb-4">{post.title}</h1>
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
-          </div>
-        </div>
+          </Container>
+        </Container>
+        <ReadMore />
       </Layout>
     )
   }
@@ -51,8 +65,19 @@ export default BlogPostTemplate
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
+      author {
+        name
+        twitter
+        image {
+          title
+          fluid(maxWidth: 98) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+      }
       title
       publishDate(formatString: "MMMM Do, YYYY")
+      category
       heroImage {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG

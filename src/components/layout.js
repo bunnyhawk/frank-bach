@@ -9,7 +9,7 @@ import './base.css'
 const Template = ({ children, workTitles }) => {
 
   return (
-    <>
+    <div className="mt-20">
 
       <Header />
 
@@ -18,7 +18,7 @@ const Template = ({ children, workTitles }) => {
 
 
       <Footer workTitles={workTitles} />
-    </>
+    </div>
   )
 }
 

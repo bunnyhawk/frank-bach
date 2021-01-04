@@ -12,7 +12,7 @@ module.exports = {
       title: ['DrukWide-Bold', 'sans-serif'],
       header: ['AllianceNo1-Bold', 'sans-serif'],
       bold: ['AllianceNo1-Bold', 'sans-serif'],
-      base: ['AllianceNo1-Light', 'sans-serif'],
+      light: ['AllianceNo1-Light', 'sans-serif'],
       space: ['SpaceMono-Regular', 'sans-serif'],
     },
     extend: {},

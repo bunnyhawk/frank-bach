@@ -5,7 +5,7 @@ const CtaButtonLink = ({ text, to, className, ...rest }) => {
   return (
     <Link
       to={to}
-      className={["text-white font-bold text-sm bg-blu px-5 py-3 mb-20", className].join(' ')}
+      className={["text-white font-bold text-sm bg-blu px-5 py-3", className].join(' ')}
       {...rest}
     >
       { text}

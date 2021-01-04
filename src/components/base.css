@@ -78,6 +78,18 @@ h3 {
   font-weight: normal;
 }
 
+.blog h1 {
+  font-size: 2em;
+}
+
+.blog h2 {
+  font-size: 28px;
+}
+
+.blog h3 {
+  font-size: 24px;
+}
+
 a {
   color: #20A6FF;
   display: inline-block;
@@ -136,6 +148,8 @@ p {
   margin-bottom: 20px;
 }
 
+
+
 .wrapper {
   width: calc(100% - 10vmin);
   margin: 0 auto;
@@ -170,15 +184,6 @@ p {
 /**
  *
  */
-.section-headline {
-  padding: 0 0 0.4em 0;
-  margin: 0 0 5vmin 0;
-  border-bottom: 1px solid #ddd;
-}
-
-/**
- *
- */
 .list-inline {
   margin: 0;
   padding: 0;
@@ -188,3 +193,19 @@ p {
   .list-inline li {
     display: inline-block;
   }
+
+.blog img {
+  max-width: 80%;
+  margin: 3rem auto;
+}
+
+.blog blockquote {
+  font-family: 'AllianceNo1-Light', 'sans-serif';
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80%;
+}

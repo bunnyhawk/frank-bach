@@ -17,7 +17,6 @@ import styles from './home.module.css';
 
 class RootIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const workTitles = get(this, 'props.data.allContentfulWork.edges')
     const brands = get(this, 'props.data.allContentfulBrands.edges[0].node.logos')
@@ -30,13 +29,13 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location} workTitles={workTitles}>
 
         <Container>
-          <Helmet title={siteTitle} />
-          <Hero data={author.node} />
+          <Helmet title="Frank Bach - Designer &amp; Speaker" />
+          <Hero data={homeContent.heroImage} />
           <Brands data={brands} />
         </Container>
         <TopBackground />
         <div className={[styles.homeCopyWrapper, "bg-black text-white pt-12"].join(' ')}>
-          <Container className={styles.homeCopy} isNarrow>
+          <Container className={[styles.homeCopy, 'pb-20'].join(' ')} isNarrow>
             <h2 className="font-space text-sm uppercase mb-4">My Story</h2>
             <div
               dangerouslySetInnerHTML={{
@@ -49,7 +48,7 @@ class RootIndex extends React.Component {
                 __html: speakingCopy.html,
               }}
             />
-            <CtaButtonLink text="Want to chat? Let's talk! &#8594;" to="/contact" />
+            <CtaButtonLink text="Want to chat? Let's talk! &#8594;" to="/contact" className="mt-4" />
           </Container>
         </div>
         <Interviews
@@ -77,16 +76,6 @@ export const pageQuery = graphql`
             shortBio
           }
           title
-          heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              # background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
         }
       }
     }
@@ -95,6 +84,7 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          postDate
         }
       }
     }
@@ -122,6 +112,17 @@ export const pageQuery = graphql`
     allContentfulHomePage(filter: {}) {
       edges {
         node {
+          heroImage {
+            title
+            fluid(
+              maxWidth: 1180
+              maxHeight: 480
+              resizingBehavior: PAD
+              # background: "rgb:000000"
+            ) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           story {
             childMarkdownRemark {
               html

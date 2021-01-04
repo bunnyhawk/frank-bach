@@ -1,14 +1,28 @@
 .carousel {
   max-width: 800px;
 }
-.carouselLeftButton {
+
+.carouselButton {
   position: absolute;
+  top: calc(50% - 18px);
+  transition: opacity 300ms ease-in-out;
+}
+
+.carouselButton:disabled {
+  opacity: .25;
+}
+
+.carouselButton img {
+  height: 100%;
+  width: auto;
+}
+
+.carouselLeftButton {
+  height: 36px;
   left: 0;
-  top: 50%;
 }
 
 .carouselRightButton {
-  position: absolute;
+  height: 33px;
   right: 0;
-  top: 50%;
 }
