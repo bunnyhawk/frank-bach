@@ -1,16 +1,16 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
+import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
-const WorkCarousel = ({ data }) => {
+const WorkCarousel = ({ data, darkTheme, className, slideHeight, slightWidth }) => {
 
   return (
     <CarouselProvider
-      naturalSlideWidth={1200}
-      naturalSlideHeight={550}
+      naturalSlideWidth={slightWidth}
+      naturalSlideHeight={slideHeight}
       totalSlides={data.length}
-      className={["m-auto relative px-20"].join(' ')}
+      className={["m-auto relative", className].join(' ')}
     >
       <Slider>
         {data.map((node, index) => (
@@ -19,6 +19,7 @@ const WorkCarousel = ({ data }) => {
           </Slide>
         ))}
       </Slider>
+      <DotGroup className={darkTheme ? 'is-dark' : ''} />
     </CarouselProvider>
   );
 }

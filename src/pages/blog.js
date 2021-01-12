@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 
-
+import Container from '../components/container'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styles from './blog.module.css'
@@ -14,22 +14,18 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title="Blog - Frank Bach" />
-          <div className={styles.hero}>Blog</div>
-          <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts && posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
+        <Helmet title="Blog - Frank Bach" />
+        <Container isNarrow className="pb-24">
+          <ul>
+            {posts && posts.map(({ node }) => {
+              return (
+                <li key={node.slug} className="mb-12">
+                  <ArticlePreview article={node} isBlogHome />
+                </li>
+              )
+            })}
+          </ul>
+        </Container>
       </Layout>
     )
   }

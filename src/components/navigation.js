@@ -1,24 +1,45 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export default () => (
-  <nav role="navigation">
-    <ul className="flex font-header">
-      <li className="flex-grow">
-        <Link to="/work/">Work</Link>
-      </li>
-      <li className="flex-grow">
-        <Link to="/speaking/">Speaking</Link>
-      </li>
-      <li className="flex-grow">
-        <Link to="/blog/">Blog</Link>
-      </li>
-      <li className="flex-grow">
-        <Link to="/shop/">Shop</Link>
-      </li>
-      <li className="flex-grow">
-        <Link to="/contact/">Contact</Link>
-      </li>
+import LinkedIn from '../../static/linkedin.svg'
+import Twitter from '../../static/twitter.svg'
+import Instagram from '../../static/instagram.svg'
+
+const menuItems = [
+  { title: 'Work', href: '/work/' },
+  { title: 'Speaking', href: '/speaking/' },
+  { title: 'Blog', href: '/blog/' },
+  { title: 'Shop', href: '/shop/' },
+  { title: 'Contact', href: '/contact/' },
+]
+
+export default ({ isMobile, className }) => (
+  <nav role="navigation" className={[className, isMobile ? 'flex items-center justify-center' : ''].join(' ')}>
+    <ul className={["flex font-header", isMobile ? 'flex-col items-center' : ''].join(' ')}>
+      {isMobile && (
+        <li className='font-title text-2xl block uppercase mb-6'><Link to="/">Home</Link></li>
+      )}
+      {menuItems.map((item, index) => (
+        <li key={`${item.title}-${index}`} className={[isMobile ? 'font-title text-2xl block uppercase mb-6' : '', "flex-grow"].join(' ')}>
+          <Link to={item.href}>{item.title}</Link>
+        </li>
+      ))}
+      {isMobile && (
+        <li className='mobile-social font-title text-2xl block uppercase flex mt-2'>
+          <a href="https://twitter.com/francois_bach" className="mr-6">
+            <Twitter />
+            <span className="sr-only">Twitter</span>
+          </a>
+          <a href="https://instagram.com/francoisbach_">
+            <Instagram />
+            <span className="sr-only">Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/in/francoisbach/" className="ml-6">
+            <LinkedIn />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+        </li>
+      )}
     </ul>
   </nav>
 )

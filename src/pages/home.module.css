@@ -1,5 +1,7 @@
-.homeCopy h2 {
-  margin-left: -27px;
+@media only screen and (min-width: 639px) {
+  .homeCopy h2 {
+    margin-left: -27px;
+  }
 }
 
 .homeCopy h3 {
@@ -19,4 +21,10 @@
 
 .homeCopyButton {
   background-color: #20A6FF;
+}
+
+.homeImage {
+  width: 281px;
+  right: 0;
+  top: calc(-10vw - 50px)
 }

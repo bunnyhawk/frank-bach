@@ -15,7 +15,11 @@ module.exports = {
       light: ['AllianceNo1-Light', 'sans-serif'],
       space: ['SpaceMono-Regular', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      textSize: {
+        'xs': '.8125rem'
+      }
+    },
   },
   variants: {
     extend: {},

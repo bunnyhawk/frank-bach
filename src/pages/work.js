@@ -7,6 +7,9 @@ import Layout from '../components/layout'
 import Container from '../components/container'
 import WorkCarousel from '../components/work-carousel'
 import LetsWork from '../components/lets-work'
+
+import styles from './work.module.css'
+
 class WorkIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -16,8 +19,8 @@ class WorkIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title="Work - Frank Bach" />
-        <div className="pt-40 -m-20">
-          <Container isNarrow className="mb-32 text-center">
+        <div className="pt-20">
+          <Container isNarrow className="mb-20 text-center">
             <h1 className="font-header text-3xl mb-8">My design principles</h1>
             <p className="font-space">Put users in the centre and business next to them<br />
             Work in an iterative, flexible and collaborative manner<br />
@@ -26,9 +29,11 @@ class WorkIndex extends React.Component {
           </Container>
           {work.map(({ node }, index) => {
             const { title, slug, heroImages, description, role, body, workLinkText, workLinkHref } = node;
+            console.log(heroImages)
+            const isEven = index % 2;
             return (
               <section id={slug}>
-                <div className={index % 2 ? 'bg-black text-white py-20' : 'bg-white text-black py-20'}>
+                <div className={isEven ? [styles.workDark, 'bg-black text-white pt-20 relative'].join(' ') : 'bg-white text-black pt-20'}>
 
 
                   <Container isNarrow>
@@ -39,8 +44,14 @@ class WorkIndex extends React.Component {
                       }}
                     />
                   </Container>
-                  <WorkCarousel data={heroImages} />
-                  <Container isNarrow className="mt-10 mb-20">
+                  <WorkCarousel
+                    data={heroImages}
+                    className="w-5/6 mt-10"
+                    darkTheme={!!isEven}
+                    slideHeight={500}
+                    slightWidth={parseInt(heroImages[0].fluid.aspectRatio * 500, 10)}
+                  />
+                  <Container isNarrow className="py-10">
                     <div className="flex">
                       <div className="w-5/12 text-sm font-space uppercase">
                         <strong>Role:</strong> {role}<br />
@@ -61,7 +72,7 @@ class WorkIndex extends React.Component {
           })}
 
         </div>
-        <LetsWork />
+        <LetsWork isDark />
       </Layout>
     )
   }
@@ -79,7 +90,7 @@ export const pageQuery = graphql`
           heroImages {
             contentful_id
             title
-            fluid(maxWidth: 1200, maxHeight: 550, resizingBehavior: SCALE) {
+            fluid(maxHeight: 500, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }

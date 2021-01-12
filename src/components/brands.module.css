@@ -1,3 +1,24 @@
 .brandItem {
-  /* max-height: 55px; */
+  height: 55px;
+  width: 200px;
+  display: inline-block;
+  margin: 0 50px;
+}
+
+@media only screen and (min-width: 639px) {
+  .brandItem {
+    margin: 0 25px;
+  }
+}
+
+.brandItem img {
+  display: block;
+  height: 55px;
+  width: auto;
+}
+
+@media only screen and (min-width: 639px) {
+  .brandItem img {
+    height: 100% !important;
+  }
 }

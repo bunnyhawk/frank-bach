@@ -34,8 +34,8 @@ class RootIndex extends React.Component {
           <Brands data={brands} />
         </Container>
         <TopBackground />
-        <div className={[styles.homeCopyWrapper, "bg-black text-white pt-12"].join(' ')}>
-          <Container className={[styles.homeCopy, 'pb-20'].join(' ')} isNarrow>
+        <div className={[styles.homeCopyWrapper, "relative bg-black text-white pt-12"].join(' ')}>
+          <Container className={[styles.homeCopy, 'pb-20 px-6'].join(' ')} isNarrow>
             <h2 className="font-space text-sm uppercase mb-4">My Story</h2>
             <div
               dangerouslySetInnerHTML={{
@@ -50,6 +50,10 @@ class RootIndex extends React.Component {
             />
             <CtaButtonLink text="Want to chat? Let's talk! &#8594;" to="/contact" className="mt-4" />
           </Container>
+
+        </div>
+        <div className="relative hidden md:block">
+          <img src="/sun-rays.png" alt="graphic of sun rays" className={[styles.homeImage, 'absolute'].join(' ')} />
         </div>
         <Interviews
           interviewWebList={homeContent.interviewWeb}
@@ -100,7 +104,7 @@ export const pageQuery = graphql`
             }
             fluid(
                 maxWidth: 200
-                maxHeight: 40
+                maxHeight: 55
                 resizingBehavior: PAD
               ) {
                 ...GatsbyContentfulFluid_tracedSVG
@@ -116,9 +120,8 @@ export const pageQuery = graphql`
             title
             fluid(
               maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              # background: "rgb:000000"
+              # maxHeight: 480
+              resizingBehavior: FILL
             ) {
               ...GatsbyContentfulFluid_tracedSVG
             }

@@ -4,9 +4,9 @@ import { Link } from 'gatsby'
 import Container from './container'
 import styles from './lets-work.module.css'
 
-const LetsWork = () => {
+const LetsWork = ({ isDark }) => {
   return (
-    <div className={styles.letsWorkWrapper}>
+    <div className={[styles.letsWorkWrapper, isDark ? 'bg-black' : ''].join(' ')}>
       <div className={[styles.letsWork, 'text-white'].join(' ')}>
         <Container isNarrow>
           <h3>Let’s work together <span role="img" aria-label="handshake">🤝</span></h3>
