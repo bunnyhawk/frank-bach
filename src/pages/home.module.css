@@ -17,6 +17,7 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center bottom;
+  margin-top: -1px;
 }
 
 .homeCopyButton {

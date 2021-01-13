@@ -15,7 +15,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title="Blog - Frank Bach" />
-        <Container isNarrow className="pb-24">
+        <Container isNarrow className="md:pb-24">
           <ul>
             {posts && posts.map(({ node }) => {
               return (
@@ -43,7 +43,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxWidth: 1200, maxHeight: 700, resizingBehavior: FILL) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }

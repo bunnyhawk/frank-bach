@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import NavigationFooter from './navigation-footer';
+
 import styles from './footer.module.css'
 
 import Twitter from '../../static/twitter.svg'
@@ -12,7 +14,8 @@ const Footer = ({ workTitles }) => {
   return (
     <footer className={[styles.footer, "bg-black text-white relative"].join(' ')}>
       <div className="container m-auto">
-        <nav role="navigation" className={[styles.footerNav, 'text-sm lh-2 flex'].join(' ')}>
+        <NavigationFooter className="md:hidden" />
+        <nav role="navigation" className={[styles.footerNav, 'hidden md:block text-sm lh-2 flex'].join(' ')}>
           <div className="container flex m-auto items-start">
             <div className="flex-1">
               <Link to="/" className="font-header text-white">Home</Link>

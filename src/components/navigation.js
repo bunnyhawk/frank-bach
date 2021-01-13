@@ -14,10 +14,10 @@ const menuItems = [
 ]
 
 export default ({ isMobile, className }) => (
-  <nav role="navigation" className={[className, isMobile ? 'flex items-center justify-center' : ''].join(' ')}>
+  <nav role="navigation" className={[className, isMobile ? 'flex items-center justify-center' : 'mr-4 lg:mr-8'].join(' ')}>
     <ul className={["flex font-header", isMobile ? 'flex-col items-center' : ''].join(' ')}>
       {isMobile && (
-        <li className='font-title text-2xl block uppercase mb-6'><Link to="/">Home</Link></li>
+        <li className="font-title text-2xl block uppercase mb-6"><Link to="/">Home</Link></li>
       )}
       {menuItems.map((item, index) => (
         <li key={`${item.title}-${index}`} className={[isMobile ? 'font-title text-2xl block uppercase mb-6' : '', "flex-grow"].join(' ')}>

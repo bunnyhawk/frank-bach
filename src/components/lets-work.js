@@ -7,7 +7,7 @@ import styles from './lets-work.module.css'
 const LetsWork = ({ isDark }) => {
   return (
     <div className={[styles.letsWorkWrapper, isDark ? 'bg-black' : ''].join(' ')}>
-      <div className={[styles.letsWork, 'text-white'].join(' ')}>
+      <div className={[styles.letsWork, 'text-white px-6'].join(' ')}>
         <Container isNarrow>
           <h3>Let’s work together <span role="img" aria-label="handshake">🤝</span></h3>
           <p>I can speak with your team over webinar or event, help build your MVP,<br />

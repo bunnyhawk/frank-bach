@@ -34,8 +34,8 @@ class RootIndex extends React.Component {
           <Brands data={brands} />
         </Container>
         <TopBackground />
-        <div className={[styles.homeCopyWrapper, "relative bg-black text-white pt-12"].join(' ')}>
-          <Container className={[styles.homeCopy, 'pb-20 px-6'].join(' ')} isNarrow>
+        <div className={[styles.homeCopyWrapper, "bg-black relative text-white"].join(' ')}>
+          <Container className={[styles.homeCopy, ' pt-12 pb-20 px-6'].join(' ')} isNarrow>
             <h2 className="font-space text-sm uppercase mb-4">My Story</h2>
             <div
               dangerouslySetInnerHTML={{

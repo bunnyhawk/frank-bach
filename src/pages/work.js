@@ -22,21 +22,18 @@ class WorkIndex extends React.Component {
         <div className="pt-20">
           <Container isNarrow className="mb-20 text-center">
             <h1 className="font-header text-3xl mb-8">My design principles</h1>
-            <p className="font-space">Put users in the centre and business next to them<br />
+            <p className="font-space px-8">Put users in the centre and business next to them<br />
             Work in an iterative, flexible and collaborative manner<br />
             Not everything that matters is measurable</p>
             <img src={`/design-principles.png`} alt="design principles flow chart" className="w-9/12 m-auto" />
           </Container>
           {work.map(({ node }, index) => {
             const { title, slug, heroImages, description, role, body, workLinkText, workLinkHref } = node;
-            console.log(heroImages)
             const isEven = index % 2;
             return (
               <section id={slug}>
                 <div className={isEven ? [styles.workDark, 'bg-black text-white pt-20 relative'].join(' ') : 'bg-white text-black pt-20'}>
-
-
-                  <Container isNarrow>
+                  <Container isNarrow className="px-6">
                     <h2 className="font-header fs-40">{title}</h2>
                     <p
                       dangerouslySetInnerHTML={{
@@ -51,7 +48,7 @@ class WorkIndex extends React.Component {
                     slideHeight={500}
                     slightWidth={parseInt(heroImages[0].fluid.aspectRatio * 500, 10)}
                   />
-                  <Container isNarrow className="py-10">
+                  <Container isNarrow className="py-10 px-6">
                     <div className="flex">
                       <div className="w-5/12 text-sm font-space uppercase">
                         <strong>Role:</strong> {role}<br />

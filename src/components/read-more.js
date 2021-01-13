@@ -19,7 +19,7 @@ const ReadMore = () => {
             publishDate(formatString: "MMMM Do, YYYY")
             tags
             heroImage {
-              fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: SCALE) {
+              fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
                 ...GatsbyContentfulFluid_tracedSVG
               }
             }
@@ -29,15 +29,17 @@ const ReadMore = () => {
     }
   `)
   const posts = get(data, 'allContentfulBlogPost.edges')
-  console.log(posts)
+
   return (
     <section className={[styles.readMoreWrapper, 'relative -m-20'].join(' ')}>
       <div className={[styles.readMore, 'pt-20 pb-40'].join(' ')}>
         <Container>
           <h3 className="text-sm text-center font-space text-grey-400 uppercase pb-12">Read more</h3>
-          <ul className="flex items-start justify-between">
+          <ul className="flex items-start justify-between flex-col md:flex-row">
             {posts.map(({ node }) => (
-              <li key={node.slug} className="w-2/6 mx-12 my-4"><ArticlePreview article={node} /></li>
+              <li key={node.slug} className="w-full md:w-2/6 md:mx-12 md:my-4">
+                <ArticlePreview article={node} />
+              </li>
             ))}
           </ul>
         </Container>

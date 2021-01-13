@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
               fluid={post.heroImage.fluid}
             />
           </div>
-          <div className="absolute w-40">
+          <div className="relative md:absolute md:w-40 pb-8 md:pb-0">
             <a
               className="block mx-auto w-32 text-center"
               href={`https://twitter.com/${post.author.twitter}`}
@@ -44,7 +44,7 @@ class BlogPostTemplate extends React.Component {
             </a>
           </div>
 
-          <Container isNarrow className="blog mb-40">
+          <Container isNarrow className="blog mb-40 px-6">
             <div className="font-space text-gray-400 text-sm uppercase">{post.publishDate} / {post.category}</div>
             <h1 className="mb-4">{post.title}</h1>
             <div

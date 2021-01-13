@@ -18,7 +18,7 @@ const Hero = ({ data }) => {
     ({ currPos }) => {
       const relativePageOffset = -currPos.y + (window.pageYOffset + window.innerHeight * 1.5);
       // setImagePosition(imageRef.current.getBoundingClientRect());
-      console.log(currPos.y, imagePosition, relativePageOffset)
+
       if (!transitionSun && relativePageOffset > imagePosition.top) {
         setTransitionSun(true)
       }
@@ -37,7 +37,7 @@ const Hero = ({ data }) => {
         <div className="font-space text-xs text-gray-400 uppercase">Designer &amp; Speaker</div>
         <h3 className="font-title text-5xl md:text-6xl uppercase mt-2 mx-auto">Frank Bach</h3>
       </div>
-      <div className={["sunWrapper", transitionSun ? 'transition' : ''].join(' ')}>
+      <div className={["sunWrapper", transitionSun ? '' : ''].join(' ')}>
         <img className="sun" src="/sun_symbol.png" alt="an illustrative sun" />
       </div>
       <div ref={imageRef} className={styles.heroImageWrapper}>

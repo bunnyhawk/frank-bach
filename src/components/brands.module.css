@@ -2,7 +2,7 @@
   height: 55px;
   width: 200px;
   display: inline-block;
-  margin: 0 50px;
+  margin: 0 10px;
 }
 
 @media only screen and (min-width: 639px) {
