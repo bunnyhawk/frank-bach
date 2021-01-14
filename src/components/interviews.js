@@ -3,7 +3,7 @@ import React from 'react';
 
 const InterviewListItem = ({ item }) => (<li><a href={item.linkHref} className="text-xs">{item.linkText}</a></li>);
 
-const Interviews = ({ interviewWebList, interviewPodcastList }) => {
+const Interviews = ({ interviewWebList, interviewPodcastList, isHome }) => {
   return (
     <section className="mb-10 md:mb-40 contents">
       <div className="text-center md:text-left contents">

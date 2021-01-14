@@ -55,10 +55,13 @@ class RootIndex extends React.Component {
         <div className="relative hidden md:block">
           <img src="/sun-rays.png" alt="graphic of sun rays" className={[styles.homeImage, 'absolute'].join(' ')} />
         </div>
-        <Interviews
-          interviewWebList={homeContent.interviewWeb}
-          interviewPodcastList={homeContent.interviewPodcast}
-        />
+        <Container isNarrow className="speakingGrid mb-10 md:mb-40">
+          <Interviews
+            interviewWebList={homeContent.interviewWeb}
+            interviewPodcastList={homeContent.interviewPodcast}
+            isHome
+          />
+        </Container>
         <Hype data={hypeContent} />
         <LetsWork />
       </Layout>
