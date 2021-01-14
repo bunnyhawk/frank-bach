@@ -13,6 +13,10 @@ const brandListItem = (brand) => (
   </li>
 );
 
+const ContactItem = ({ children }) => (
+  <div className="flex-1 text-center mb-6">{children}</div>
+)
+
 class ContactIndex extends React.Component {
   render() {
     const brandsCollaborated = get(this, 'props.data.allContentfulBrandsCollaborated.edges[0].node.brand')
@@ -23,22 +27,22 @@ class ContactIndex extends React.Component {
           <div className="m-auto mb-12" style={{ width: 225 }}>
             <img src="/blackdot.gif" alt="growing black dot" />
           </div>
-          <div className="flex mb-20">
-            <div className="flex-1 text-center">
+          <div className="flex flex-col md:flex-row mb-20">
+            <ContactItem>
               <div className="font-bold"><span role="img" aria-label="Talking Head">🗣</span> Speaking engagements</div>
               <Link to="#">Fill out this form</Link>
-            </div>
-            <div className="flex-1 text-center">
+            </ContactItem>
+            <ContactItem>
               <div className="font-bold"><span role="img" aria-label="Painting with frame">🖼</span> Design projects</div>
               <a href="mailto:f@francoisbach.com">f@francoisbach.com</a>
-            </div>
-            <div className="flex-1 text-center">
+            </ContactItem>
+            <ContactItem>
               <div className="font-bold"><span role="img" aria-label="Star">🌟</span> Influencer collabs</div>
               <a href="mailto:f@francoisbach.com">f@francoisbach.com</a>
-            </div>
+            </ContactItem>
           </div>
           <h2 className="font-space text-center text-sm mb-6">Brands I’ve collaborated with</h2>
-          <ul className="flex flex-wrap">
+          <ul className="flex flex-wrap mx-2">
             {brandsCollaborated.map(brandListItem)}
           </ul>
         </Container>

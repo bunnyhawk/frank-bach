@@ -31,13 +31,13 @@ const ReadMore = () => {
   const posts = get(data, 'allContentfulBlogPost.edges')
 
   return (
-    <section className={[styles.readMoreWrapper, 'relative -m-20'].join(' ')}>
-      <div className={[styles.readMore, 'pt-20 pb-40'].join(' ')}>
+    <section className={[styles.readMoreWrapper, 'relative -mb-20'].join(' ')}>
+      <div className={[styles.readMore, 'pt-20 pb-10 md:pb-40'].join(' ')}>
         <Container>
-          <h3 className="text-sm text-center font-space text-grey-400 uppercase pb-12">Read more</h3>
+          <h3 className="text-sm text-center font-space text-grey uppercase pb-12">Read more</h3>
           <ul className="flex items-start justify-between flex-col md:flex-row">
             {posts.map(({ node }) => (
-              <li key={node.slug} className="w-full md:w-2/6 md:mx-12 md:my-4">
+              <li key={node.slug} className="w-full md:w-2/6 md:mx-12 mb-6 md:my-4">
                 <ArticlePreview article={node} />
               </li>
             ))}

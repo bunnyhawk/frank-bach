@@ -1,24 +1,35 @@
-import React from 'react';
-import Container from './container';
+import React from 'react'
 
-const TalkListItem = ({ item }) => (<li><a href={item.linkHref} className="text-xs">{item.linkText}</a></li>);
+
+const TalkListItem = ({ item }) => (
+  <li className="mb-6">
+    <div>{item.location}</div>
+    <div className="text-grey text-xs uppercase">{item.city}</div>
+  </li>
+)
 
 const Talks = ({ talkList }) => {
+  const listLength = talkList.length
+  const halfIndex = Math.floor(listLength / 2)
+  const leftList = talkList.slice(0, halfIndex);
+  const rightList = talkList.slice(halfIndex, listLength);
   return (
-    <section className="mb-10 md:mb-40">
-      <Container isNarrow>
-        <div className="flex flex-col md:flex-row text-center md:text-left">
-          <h3 className="flex-1 mb-10">Talks</h3>
-          <ul className="flex-1 mb-7">
-            <li className="font-space uppercase mb-3 text-sm">Web</li>
-            {talkList.map((item) => (
-              <TalkListItem item={item} key={item.contentful_id} />
-            ))}
-          </ul>
-        </div>
-      </Container>
+    <section className="contents">
+      <div className="text-center md:text-left contents">
+        <h3 className=" mb-10">Talks</h3>
+        <ul className="md:mb-12 text-sm">
+          {leftList.map(({ node }) => (
+            <TalkListItem item={node} key={node.contentful_id} />
+          ))}
+        </ul>
+        <ul className="mb-10 md:mb-12 text-sm">
+          {rightList.map(({ node }) => (
+            <TalkListItem item={node} key={node.contentful_id} />
+          ))}
+        </ul>
+      </div>
     </section>
-  );
+  )
 }
 
 export default Talks;

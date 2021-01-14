@@ -13,6 +13,8 @@ class SpeakingIndex extends React.Component {
   render() {
     const speakingContent = get(this, 'props.data.allContentfulSpeakingPage.edges[0].node')
     const homeContent = get(this, 'props.data.allContentfulHomePage.edges[0].node')
+    const talkItems = get(this, 'props.data.allContentfulTalkItem.edges')
+    console.log(talkItems)
 
     return (
       <Layout location={this.props.location}>
@@ -61,11 +63,15 @@ class SpeakingIndex extends React.Component {
               </div>
             </Container>
           </div>
-          <Talks talkList={homeContent.interviewWeb} />
-          <Interviews
-            interviewWebList={homeContent.interviewWeb}
-            interviewPodcastList={homeContent.interviewPodcast}
-          />
+
+          <Container isNarrow className="speakingGrid">
+            <Talks talkList={talkItems} />
+            <Interviews
+              interviewWebList={homeContent.interviewWeb}
+              interviewPodcastList={homeContent.interviewPodcast}
+            />
+          </Container>
+
         </div>
 
       </Layout>
@@ -109,6 +115,17 @@ export const pageQuery = graphql`
             linkText
             linkHref
           }
+        }
+      }
+    }
+    allContentfulTalkItem(filter: {}) {
+      edges {
+        node {
+
+          contentful_id
+          location
+          city
+
         }
       }
     }

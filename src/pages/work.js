@@ -49,12 +49,12 @@ class WorkIndex extends React.Component {
                     slightWidth={parseInt(heroImages[0].fluid.aspectRatio * 500, 10)}
                   />
                   <Container isNarrow className="py-10 px-6">
-                    <div className="flex">
-                      <div className="w-5/12 text-sm font-space uppercase">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="md:w-5/12 mb-4 text-sm font-space uppercase">
                         <strong>Role:</strong> {role}<br />
                         <a href={workLinkHref}>{workLinkText}</a>
                       </div>
-                      <div className="w-7/12">
+                      <div className="md:w-7/12">
                         <p
                           dangerouslySetInnerHTML={{
                             __html: body.childMarkdownRemark.html,

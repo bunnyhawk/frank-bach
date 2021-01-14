@@ -207,12 +207,19 @@ p {
 .blog blockquote {
   font-family: 'AllianceNo1-Light', 'sans-serif';
   font-weight: 300;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 24px;
+  line-height: 36px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   width: 80%;
+}
+
+@media only screen and (min-width: 639px) {
+  .blog blockquote {
+    font-size: 32px;
+    line-height: 48px;
+  }
 }
 
 .carousel__dot-group {
@@ -402,10 +409,6 @@ p {
   height: 150px;
 }
 
-.speaking {
-  padding-bottom: 100px;
-}
-
 @media only screen and (min-width: 639px) {
   .speaking {
     background-color: white;
@@ -413,6 +416,7 @@ p {
     background-position: top 20vw center;
     background-repeat: no-repeat;
     background-size: 100% calc(100% - 20vw);
+    padding-bottom: 120px;
   }
 
   .speakingImage {
@@ -422,6 +426,18 @@ p {
 
   .speakingImage.last {
     height: 150px;
+  }
+}
+
+.speakingGrid {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+@media only screen and (min-width: 639px) {
+  .speakingGrid {
+    display: grid;
+    grid-template-columns: 20% 37% 43%;
   }
 }
 
