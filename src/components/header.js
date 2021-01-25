@@ -13,7 +13,7 @@ const Header = ({ children, workTitles }) => {
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      const isShow = currPos.y > prevPos.y
+      const isShow = currPos.y >= -200 || currPos.y > prevPos.y
       if (isShow !== hideOnScroll) setHideOnScroll(isShow)
     },
     [hideOnScroll],
@@ -41,13 +41,13 @@ const Header = ({ children, workTitles }) => {
 
               <ul className="flex">
                 <li className="flex-1 mr-6">
-                  <a href="https://twitter.com/francois_bach">
+                  <a href="https://twitter.com/francois_bach" target="_blank" rel="noreferrer">
                     <Twitter />
                     <span className="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li className="flex-1 mr-2">
-                  <a href="https://instagram.com/francoisbach_">
+                  <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer">
                     <Instagram />
                     <span className="sr-only">Instagram</span>
                   </a>

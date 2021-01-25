@@ -20,7 +20,7 @@ const ReadMore = () => {
             tags
             heroImage {
               fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
-                ...GatsbyContentfulFluid_tracedSVG
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }

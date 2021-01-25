@@ -35,7 +35,7 @@ class RootIndex extends React.Component {
         </Container>
         <TopBackground />
         <div className={[styles.homeCopyWrapper, "bg-black relative text-white"].join(' ')}>
-          <Container className={[styles.homeCopy, ' pt-12 pb-20 px-6'].join(' ')} isNarrow>
+          <Container className={[styles.homeCopy, 'pt-12 md:pt-36 pb-20 px-6'].join(' ')} isNarrow>
             <h2 className="font-space text-sm uppercase mb-4">My Story</h2>
             <div
               dangerouslySetInnerHTML={{
@@ -126,7 +126,7 @@ export const pageQuery = graphql`
               # maxHeight: 480
               resizingBehavior: FILL
             ) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           story {

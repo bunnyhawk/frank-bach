@@ -12,7 +12,6 @@ import styles from './work.module.css'
 
 class WorkIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const work = get(this, 'props.data.allContentfulWork.edges')
 
 
@@ -52,7 +51,7 @@ class WorkIndex extends React.Component {
                     <div className="flex flex-col md:flex-row">
                       <div className="md:w-5/12 mb-4 text-sm font-space uppercase">
                         <strong>Role:</strong> {role}<br />
-                        <a href={workLinkHref}>{workLinkText}</a>
+                        <a href={workLinkHref} target="_blank" rel="noreferrer">{workLinkText}</a>
                       </div>
                       <div className="md:w-7/12">
                         <p

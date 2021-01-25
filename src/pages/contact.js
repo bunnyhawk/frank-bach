@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import get from 'lodash/get'
+import { Helmet } from 'react-helmet'
 
 import Layout from '../components/layout'
 import Container from '../components/container'
@@ -23,6 +24,7 @@ class ContactIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
+        <Helmet title="Contact - Frank Bach" />
         <Container isNarrow className="mb-40">
           <div className="m-auto mb-12" style={{ width: 225 }}>
             <img src="/blackdot.gif" alt="growing black dot" />

@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import styles from './blog.module.css'
 
 class BlogIndex extends React.Component {
   render() {
@@ -44,7 +43,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 1200, maxHeight: 700, resizingBehavior: FILL) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           description {

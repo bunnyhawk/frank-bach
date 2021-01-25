@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import NavigationFooter from './navigation-footer';
+import NavigationFooter from './navigation-footer'
+import Container from './container'
 
 import styles from './footer.module.css'
 
@@ -13,7 +14,7 @@ const Footer = ({ workTitles }) => {
   const year = new Date().getFullYear();
   return (
     <footer className={[styles.footer, "bg-black text-white relative"].join(' ')}>
-      <div className="container m-auto">
+      <Container>
         <NavigationFooter className="md:hidden" />
         <nav role="navigation" className={[styles.footerNav, 'hidden md:block text-sm lh-2 flex'].join(' ')}>
           <div className="container flex m-auto items-start">
@@ -38,7 +39,7 @@ const Footer = ({ workTitles }) => {
                 <Link to="/blog/" className="text-white">Blog</Link>
               </li>
               <li>
-                <Link to="/shop/" className="text-white">Shop</Link>
+                <a to="https://sunshineshop.la/" className="text-white" target="_blank" rel="noreferrer">Shop</a>
               </li>
               <li>
                 <Link to="/contact/" className="text-white">Contact</Link>
@@ -48,19 +49,19 @@ const Footer = ({ workTitles }) => {
               <div className="font-header mb-4">Follow along</div>
               <ul className="flex">
                 <li className="mr-5">
-                  <a href="https://twitter.com/francois_bach" className="text-white">
+                  <a href="https://twitter.com/francois_bach" className="text-white" target="_blank" rel="noreferrer">
                     <Twitter />
                     <span className="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li className="mr-5">
-                  <a href="https://instagram.com/francoisbach_">
+                  <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer">
                     <Instagram />
                     <span className="sr-only">Instagram</span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/francoisbach/" className="text-white">
+                  <a href="https://www.linkedin.com/in/francoisbach/" className="text-white" target="_blank" rel="noreferrer">
                     <LinkedIn />
                     <span className="sr-only">LinkedIn</span>
                   </a>
@@ -72,7 +73,7 @@ const Footer = ({ workTitles }) => {
         <div className="m-auto text-center">
           <small className="font-space">© <span id="year">{year}</span> Today Tomorrow Forever <span role="img" aria-label="palm tree">🌴</span><span role="img" aria-label="fire"></span>🔥 Los Angeles</small>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

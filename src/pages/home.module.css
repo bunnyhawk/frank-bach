@@ -4,6 +4,13 @@
   }
 }
 
+@media only screen and (min-width: 1280px) {
+  .homeCopyWrapper {
+    background: no-repeat 43px 43px url(/sparkles.png) #000;
+    background-size: 179px 214px;
+  }
+}
+
 .homeCopy h3 {
   margin-bottom: 30px;
 }

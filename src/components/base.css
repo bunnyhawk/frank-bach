@@ -63,6 +63,12 @@ body {
   color: #373F49;
   /* background: #eee; */
   margin: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.font-loaded body {
+  opacity: 1;
 }
 
 img {
@@ -76,7 +82,10 @@ h3 {
   font-family: "AllianceNo1-Bold", sans-serif;
   font-size: 2em;
   font-weight: normal;
+
 }
+
+
 
 h3 {
   font-size: 1.25em
@@ -441,3 +450,33 @@ p {
   }
 }
 
+@keyframes reverse {
+  0% {
+    motion-offset: 0;
+    offset-distance: 0;
+  }
+
+  to {
+    motion-offset: -100%;
+    offset-distance: -100%;
+  }
+}
+
+.sun {
+  width: 130vw;
+  height: 450px;
+  position: absolute;
+  left: -15vw;
+  top: 50vh;
+}
+
+@media only screen and (min-width: 639px) {
+  .sun {
+    height: 550px;
+  }
+
+  .sun image {
+    height: 125px;
+    width: 125px
+  }
+}

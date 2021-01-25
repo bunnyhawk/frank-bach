@@ -6,8 +6,6 @@ import Footer from './footer'
 
 import './base.css'
 
-
-
 const Template = ({ children, workTitles }) => {
 
 
@@ -17,18 +15,19 @@ const Template = ({ children, workTitles }) => {
         script={[{
           type: 'text/javascript',
           innerHTML: `
-          function loadFonts() {
-            if ('fonts' in document) {
-          
-              var bold = new FontFace("DrukWide-Bold", "url(DrukWide-Bold.ttf) format('ttf')", { weight: "700" });
-          
-              Promise.all([bold.load()]).then(function (fonts) {
-                fonts.forEach(function (font) {
-                  document.fonts.add(font);
-                });
-              });
+            // Check if API exists
+            if (document && document.fonts) {    
+              // Do not block page loading
+              setTimeout(function () {           
+                document.fonts.load('16px "DrukWide-Bold"').then(() => {
+                  // Make font using elements visible
+                  document.documentElement.classList.add('font-loaded') 
+                })
+              }, 500)
+            } else {
+              // Fallback if API does not exist 
+              document.documentElement.classList.add('font-loaded') 
             }
-          }
           `
         }]}
       >
