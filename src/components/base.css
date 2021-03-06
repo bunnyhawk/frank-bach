@@ -146,17 +146,23 @@ a:hover:after {
   color: #20A6FF;
 }
 
-header a:active path,
-header a:focus path,
-header a:hover path {
-  fill: #20A6FF;
-}
 
 .header__link:active:after,
 .header__link:focus:after,
 .header__link:hover:after {
   color: #20A6FF;
 }
+
+.icon path {
+  transition: fill 150ms ease-in-out;
+}
+
+.icon:active path,
+.icon:focus path,
+.icon:hover path {
+  fill: #20A6FF;
+}
+
 
 .icon:active:after,
 .icon:focus:after,

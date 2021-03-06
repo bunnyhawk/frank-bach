@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import LinkedIn from '../../static/linkedin.svg'
 import Twitter from '../../static/twitter.svg'
 import Instagram from '../../static/instagram.svg'
+import TikTok from '../../static/tiktok.svg'
 
 const menuItems = [
   { title: 'Work', href: '/work/' },
@@ -45,6 +46,10 @@ export default ({ className }) => (
         <a href="https://www.linkedin.com/in/francoisbach/" className="ml-6" target="_blank" rel="noreferrer">
           <LinkedIn />
           <span className="sr-only">LinkedIn</span>
+        </a>
+        <a href="https://www.tiktok.com/@frankbach" className="ml-6" target="_blank" rel="noreferrer">
+          <TikTok />
+          <span className="sr-only">TikTok</span>
         </a>
       </li>
 

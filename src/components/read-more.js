@@ -49,7 +49,7 @@ const ReadMore = () => {
     <section className={[styles.readMoreWrapper, 'relative -mb-20'].join(' ')}>
       <div className={[styles.readMore, 'pt-20 pb-10 md:pb-40'].join(' ')}>
         <Container>
-          <h3 className="text-sm text-center font-space text-grey uppercase pb-12">Read more</h3>
+          <h3 className="text-sm text-center font-space uppercase pb-12">Read more</h3>
           <ul className="flex items-start justify-between flex-col md:flex-row">
             {posts.map(({ node }) => (
               <li key={node.slug} className="w-full md:w-2/6 md:mx-12 mb-6 md:my-4">
@@ -57,11 +57,17 @@ const ReadMore = () => {
               </li>
             ))}
             <li className="w-full md:w-2/6 md:mx-12 mb-6 md:my-4">
-              <a href={blogAd.blogAdLink}>
+              <a href={blogAd.blogAdLink} className="text-black w-full">
                 <Img
                   alt={blogAd.blogAdImage.title}
                   fluid={blogAd.blogAdImage.fluid}
                 />
+                <div className="px-6 md:px-0 pt-4">
+                  <h3 className="text-xl">
+                    Sunshine Shop
+                  </h3>
+                  <p className="font-space text-blu uppercase text-xs">Shop tees, hoodies, etc.</p>
+                </div>
               </a>
             </li>
           </ul>

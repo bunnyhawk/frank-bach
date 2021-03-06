@@ -9,6 +9,7 @@ import styles from './footer.module.css'
 import Twitter from '../../static/twitter.svg'
 import Instagram from '../../static/instagram.svg'
 import LinkedIn from '../../static/linkedin.svg'
+import TikTok from '../../static/tiktok.svg'
 
 const Footer = ({ workTitles }) => {
   const year = new Date().getFullYear();
@@ -49,21 +50,27 @@ const Footer = ({ workTitles }) => {
               <div className="font-header mb-4">Follow along</div>
               <ul className="flex">
                 <li className="mr-5">
-                  <a href="https://twitter.com/francois_bach" className="text-white" target="_blank" rel="noreferrer">
+                  <a href="https://twitter.com/francois_bach" className="icon" target="_blank" rel="noreferrer">
                     <Twitter />
                     <span className="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li className="mr-5">
-                  <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer">
+                  <a href="https://instagram.com/francoisbach_" className="icon" target="_blank" rel="noreferrer">
                     <Instagram />
                     <span className="sr-only">Instagram</span>
                   </a>
                 </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/francoisbach/" className="text-white" target="_blank" rel="noreferrer">
+                <li className="mr-5">
+                  <a href="https://www.linkedin.com/in/francoisbach/" className="icon" target="_blank" rel="noreferrer">
                     <LinkedIn />
                     <span className="sr-only">LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@frankbach" className="icon" target="_blank" rel="noreferrer">
+                    <TikTok />
+                    <span className="sr-only">TikTok</span>
                   </a>
                 </li>
               </ul>

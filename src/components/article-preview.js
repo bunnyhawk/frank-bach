@@ -7,9 +7,9 @@ import styles from './article-preview.module.css'
 export default ({ article, isBlogHome }) => (
 
   <Link to={`/blog/${article.slug}`} className="text-black w-full">
-    <Img alt="" fluid={article.heroImage.fluid} className={isBlogHome ? 'mb-7' : ''} />
-    <div className="px-6 md:px-0">
-      <h3 className="text-lg">
+    <Img alt={article.heroImage.title} fluid={article.heroImage.fluid} className={isBlogHome ? 'mb-7' : ''} />
+    <div className="px-6 md:px-0 pt-4">
+      <h3 className="text-xl">
         {article.title}
       </h3>
       {article.description && (
