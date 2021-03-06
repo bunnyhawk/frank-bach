@@ -118,13 +118,13 @@ a:hover {
 a:after {    
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
-  color: #20A6FF;
+  color: #8CD0FF;
   content: "";
   display: block;
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #20A6FF;
+  background: #8CD0FF;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -136,20 +136,32 @@ a:hover:after {
   left: 0; 
 }
 
-header a {
+.header__link {
   color: currentColor;
 }
 
-header a:active,
-header a:focus,
-header a:hover {
+.header__link:active,
+.header__link:focus,
+.header__link:hover {
   color: #20A6FF;
 }
 
-header a:active:after,
-header a:focus:after,
-header a:hover:after {
+header a:active path,
+header a:focus path,
+header a:hover path {
+  fill: #20A6FF;
+}
+
+.header__link:active:after,
+.header__link:focus:after,
+.header__link:hover:after {
   color: #20A6FF;
+}
+
+.icon:active:after,
+.icon:focus:after,
+.icon:hover:after {
+  display: none;
 }
 
 h2,

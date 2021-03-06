@@ -39,7 +39,7 @@ const Footer = ({ workTitles }) => {
                 <Link to="/blog/" className="text-white">Blog</Link>
               </li>
               <li>
-                <a to="https://sunshineshop.la/" className="text-white" target="_blank" rel="noreferrer">Shop</a>
+                <a href="https://sunshineshop.la/" className="text-white" target="_blank" rel="noreferrer">Shop</a>
               </li>
               <li>
                 <Link to="/contact/" className="text-white">Contact</Link>

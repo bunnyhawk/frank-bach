@@ -23,8 +23,8 @@ export default ({ isMobile, className }) => (
         <li key={`${item.title}-${index}`} className={[isMobile ? 'font-title text-2xl block uppercase mb-6' : '', "flex-grow"].join(' ')}>
           {
             item.isExternal
-              ? (<a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>)
-              : (<Link to={item.href}>{item.title}</Link>)
+              ? (<a href={item.href} target="_blank" rel="noreferrer" className="header__link">{item.title}</a>)
+              : (<Link to={item.href} className="header__link">{item.title}</Link>)
           }
         </li>
       ))}

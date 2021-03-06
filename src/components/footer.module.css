@@ -26,6 +26,12 @@
   padding-bottom: 89px;
 }
 
+.footerNav a:active,
+.footerNav a:focus,
+.footerNav a:hover {
+  color: #B0B0B0;
+}
+
 .footerNav svg {
   height: 24px;
 }

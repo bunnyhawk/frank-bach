@@ -1,7 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql, useStaticQuery } from 'gatsby'
-// import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Container from './container'
 import ArticlePreview from './article-preview'
@@ -11,7 +11,7 @@ import styles from './read-more.module.css'
 const ReadMore = () => {
   const data = useStaticQuery(graphql`
     query ReadMoreQuery {
-      allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+      allContentfulBlogPost(limit: 2, sort: { fields: [publishDate], order: DESC}) {
         edges {
           node {
             title
@@ -26,9 +26,24 @@ const ReadMore = () => {
           }
         }
       }
+      allContentfulBlogAd(filter: {}) {
+        edges {
+          node {
+            blogAdImage {
+              title
+              fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+            blogAdLink
+          }
+        }
+      }
     }
   `)
   const posts = get(data, 'allContentfulBlogPost.edges')
+  const blogAd = get(data, 'allContentfulBlogAd.edges[0].node')
+  console.log(blogAd)
 
   return (
     <section className={[styles.readMoreWrapper, 'relative -mb-20'].join(' ')}>
@@ -41,6 +56,14 @@ const ReadMore = () => {
                 <ArticlePreview article={node} />
               </li>
             ))}
+            <li className="w-full md:w-2/6 md:mx-12 mb-6 md:my-4">
+              <a href={blogAd.blogAdLink}>
+                <Img
+                  alt={blogAd.blogAdImage.title}
+                  fluid={blogAd.blogAdImage.fluid}
+                />
+              </a>
+            </li>
           </ul>
         </Container>
       </div>
@@ -49,4 +72,3 @@ const ReadMore = () => {
 }
 
 export default ReadMore
-

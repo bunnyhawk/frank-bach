@@ -41,13 +41,13 @@ const Header = ({ children, workTitles }) => {
 
               <ul className="flex">
                 <li className="flex-1 mr-6">
-                  <a href="https://twitter.com/francois_bach" target="_blank" rel="noreferrer">
+                  <a href="https://twitter.com/francois_bach" target="_blank" rel="noreferrer" className="icon">
                     <Twitter />
                     <span className="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li className="flex-1 mr-2">
-                  <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer">
+                  <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer" className="icon">
                     <Instagram />
                     <span className="sr-only">Instagram</span>
                   </a>
