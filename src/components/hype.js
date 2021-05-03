@@ -28,7 +28,7 @@ const Hype = ({ data }) => (
                   }}
                 />
 
-                <figcaption className="font-space">
+                <figcaption className="font-space uppercase">
                   <span className="text-blu">{node.name}</span> {node.title}
                 </figcaption>
               </div>

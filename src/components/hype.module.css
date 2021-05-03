@@ -9,7 +9,7 @@
 }
 
 .carouselButton:disabled {
-  opacity: .25;
+  opacity: 0;
 }
 
 .carouselButton img {

@@ -25,7 +25,7 @@ class ContactIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title="Contact - Frank Bach" />
-        <Container isNarrow className="mb-40">
+        <Container isNarrow className="mt-10 mb-40">
           <div className="m-auto mb-12" style={{ width: 225 }}>
             <img src="/blackdot.gif" alt="growing black dot" />
           </div>
@@ -43,7 +43,7 @@ class ContactIndex extends React.Component {
               <a href="mailto:f@francoisbach.com">f@francoisbach.com</a>
             </ContactItem>
           </div>
-          <h2 className="font-space text-center text-sm mb-6">Brands I’ve collaborated with</h2>
+          <h2 className="font-space text-center text-sm mb-6 uppercase text-grey">Brands I’ve collaborated with</h2>
           <ul className="flex flex-wrap mx-2">
             {brandsCollaborated.map(brandListItem)}
           </ul>

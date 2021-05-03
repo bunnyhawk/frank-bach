@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     colors: {
       blu: '#20A6FF',
+      darkBlu: '#198FDC',
       grey: 'rgba(154, 154, 154)',
+      white: '#FFFFFF',
       ...colors
     },
     fontFamily: {

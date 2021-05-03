@@ -56,6 +56,10 @@
   src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "AllianceNo1-Light", sans-serif;
   font-size: 1em;
@@ -65,10 +69,17 @@ body {
   margin: 0;
   opacity: 0;
   transition: opacity 200ms ease-in;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .font-loaded body {
   opacity: 1;
+}
+
+strong {
+  font-family: "AllianceNo1-Bold";
 }
 
 img {
@@ -109,13 +120,13 @@ a {
   position: relative;
 }
 
-/* a:active,
+a:active,
 a:focus,
 a:hover {
-  color: header;
-} */
+  color: #8CD0FF;
+}
 
-a:after {    
+.underlineHover:after{  
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   color: #8CD0FF;
@@ -129,9 +140,9 @@ a:after {
   width: 0;
 }
 
-a:active:after,
-a:focus:after,
-a:hover:after {
+.underlineHover:active:after,
+.underlineHover:focus:after,
+.underlineHover:hover:after {
   width: 100%; 
   left: 0; 
 }
@@ -344,6 +355,7 @@ p {
   height: 100vh;
   margin: 0;
   padding: 50px;
+  box-sizing: border-box;
   
   background: black;
   color: white;
@@ -351,7 +363,7 @@ p {
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
   
-  transform-origin: 0% 0%;
+  /* transform-origin: 0% 0%; */
   transform: translate(100vw, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -392,33 +404,7 @@ p {
   }
 }
 
-.sunWrapper {
-  position: absolute;
-  top: calc(100vh - 200px);
-  width: 100vw;
-}
 
-.sun {
-  display: inline-block;
-  height: 215px;
-  width: 215px;
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 639px) {
-  .sunWrapper {
-    /* width: calc(100vw + 200px); */
-    width: auto;
-    /* margin-left: -100px; */
-    top: auto;
-    left: 0;
-  }
-
-  .sunWrapper.transition .sun {
-    animation: drawArc 3s linear;
-    margin: initial;
-  }
-}
 
 @keyframes drawArc {
   0%  { -webkit-transform: rotate(0deg) translateX(100vw) translateY(0) rotate(0deg); }
@@ -480,21 +466,59 @@ p {
   }
 }
 
+.sunWrapper {
+  position: absolute;
+  top: calc(100vh - 80px);
+  width: 100vw;
+}
+
 .sun {
+  display: inline-block;
+  height: 140px;
+  width: 140px;
+  margin: 0 auto;
+  position: absolute;
+  left: calc(50% - 70px);
+  z-index: 1;
+}
+
+
+.sunMoving {
   width: 130vw;
-  height: 450px;
+  height: 550px;
   position: absolute;
   left: -15vw;
   top: 50vh;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 @media only screen and (min-width: 639px) {
-  .sun {
-    height: 550px;
-  }
 
-  .sun image {
+
+  .sunMoving image {
     height: 125px;
     width: 125px
   }
+}
+
+.blogMenu {
+  display: inline-block;
+  padding: 12px 14px;
+  position: relative;
+  width: 150px;
+}
+
+.blogMenu ul {
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  padding: 14px;
+  left: 0;
+  right: 0;
+}
+
+.blogMenu ul.visible {
+  visibility: visible;
 }

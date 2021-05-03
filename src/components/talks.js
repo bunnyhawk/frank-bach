@@ -4,7 +4,7 @@ import React from 'react'
 const TalkListItem = ({ item }) => (
   <li className="mb-6">
     <div>{item.location}</div>
-    <div className="text-grey text-xs uppercase">{item.city}</div>
+    <div className="font-space text-grey text-xs uppercase">{item.city}</div>
   </li>
 )
 

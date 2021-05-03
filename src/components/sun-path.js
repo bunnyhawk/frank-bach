@@ -1,8 +1,8 @@
 import React from 'react'
 
 const SunPath = () => (
-  <div className="overflow-hidden">
-    <svg id="svg" className="sun" viewBox="0 0 1237 256"
+  <div className="hidden md:inline">
+    <svg id="svg" className="sunMoving" viewBox="0 0 1237 256"
       style={{
         shapeRendering: "geometricPrecision",
         textRendering: "geometricPrecision",

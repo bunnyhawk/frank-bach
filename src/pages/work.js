@@ -21,7 +21,7 @@ class WorkIndex extends React.Component {
         <div className="pt-20">
           <Container isNarrow className="mb-20 text-center">
             <h1 className="font-header text-3xl mb-8">My design principles</h1>
-            <p className="font-space px-8">Put users in the centre and business next to them<br />
+            <p className="px-8">Put users in the centre and business next to them<br />
             Work in an iterative, flexible and collaborative manner<br />
             Not everything that matters is measurable</p>
             <img src={`/design-principles.png`} alt="design principles flow chart" className="w-9/12 m-auto" />
@@ -35,6 +35,7 @@ class WorkIndex extends React.Component {
                   <Container isNarrow className="px-6">
                     <h2 className="font-header fs-40">{title}</h2>
                     <p
+                      className="text-2xl"
                       dangerouslySetInnerHTML={{
                         __html: description.childMarkdownRemark.html,
                       }}

@@ -10,7 +10,7 @@ const Template = ({ children, workTitles }) => {
 
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 overflow-y-hidden">
       <Helmet
         script={[{
           type: 'text/javascript',

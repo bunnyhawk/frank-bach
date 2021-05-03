@@ -35,6 +35,10 @@ const Hero = ({ data }) => {
 
   return (
     <>
+      <div className="sunWrapper md:hidden">
+        <img className="sun" src="/sun_symbol.png" alt="an illustrative sun" />
+      </div>
+
       <SunPath />
       <div className={styles.hero}>
         <div className={styles.heroHeadline}>

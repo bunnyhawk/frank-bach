@@ -78,7 +78,7 @@ const Footer = ({ workTitles }) => {
           </div>
         </nav>
         <div className="m-auto text-center">
-          <small className="font-space">© <span id="year">{year}</span> Today Tomorrow Forever <span role="img" aria-label="palm tree">🌴</span><span role="img" aria-label="fire"></span>🔥 Los Angeles</small>
+          <small className="font-space uppercase">© <span id="year">{year}</span> Today Tomorrow Forever <span role="img" aria-label="palm tree">🌴</span><span role="img" aria-label="fire"></span>🔥 Los Angeles</small>
         </div>
       </Container>
     </footer>
