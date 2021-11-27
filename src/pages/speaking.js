@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
-import Talks from '../components/Talks'
+import Talks from '../components/talks'
 import Interviews from '../components/interviews'
 import WorkCarousel from '../components/work-carousel'
 
