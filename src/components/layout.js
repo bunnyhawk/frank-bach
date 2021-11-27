@@ -6,11 +6,14 @@ import Footer from './footer'
 
 import './base.css'
 
-const Template = ({ children, workTitles }) => {
+const Template = ({ children, workTitles, isShort }) => {
 
+  const wrapperClasses = isShort
+    ? "flex flex-col justify-between min-h-screen pt-20 overflow-y-hidden"
+    : "pt-20 overflow-y-hidden";
 
   return (
-    <div className="pt-20 overflow-y-hidden">
+    <div className={wrapperClasses}>
       <Helmet
         script={[{
           type: 'text/javascript',

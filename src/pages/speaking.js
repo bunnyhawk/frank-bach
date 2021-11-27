@@ -21,8 +21,8 @@ class SpeakingIndex extends React.Component {
 
         <div className="pb-24">
           <div className="speaking">
-            <Container isNarrow className="px-6">
-              <div className="flex items-center mt-10 md:mt-40 mb-14">
+            <Container isNarrow>
+              <div className="flex items-center px-6 mt-10 md:mt-40 mb-14">
                 <h1
                   className="w-full"
                   dangerouslySetInnerHTML={{
@@ -34,8 +34,8 @@ class SpeakingIndex extends React.Component {
 
               <WorkCarousel data={speakingContent.heroImages} slideHeight={550}
                 slightWidth={parseInt(speakingContent.heroImages[0].fluid.aspectRatio * 550, 10)} />
-              <p className="font-light text-lg mt-10 mb-10 md:mb-0 mx-auto w-5/6 text-center">{speakingContent.speakingTitle}</p>
-              <div className="md:flex items-center py-2">
+              <p className="font-light text-lg px-6 mt-10 mb-10 md:mb-0 mx-auto w-5/6 text-center">{speakingContent.speakingTitle}</p>
+              <div className="md:flex items-center py-2 px-6">
                 <img className="speakingImage pl-4 md:pl-0 md:pr-4" src="/speaking-joy.png" alt="Frank speaking at a conference" />
                 <div className="md:w-8/12">
                   <h4 className="font-bold text-lg text-blu">Designing for Joy</h4>
@@ -43,7 +43,7 @@ class SpeakingIndex extends React.Component {
                   <Link to="/contact" className="text-blu text-sm font-space uppercase">Learn More &#8594;</Link>
                 </div>
               </div>
-              <div className="md:flex items-center py-2">
+              <div className="md:flex items-center py-2 px-6">
                 <img className="speakingImage pl-4 block md:hidden" src="/speaking-mindful.png" alt="Frank speaking at a conference" />
                 <div className="md:w-8/12">
                   <h4 className="font-bold text-lg text-blu">Mindful Tips</h4>
@@ -52,7 +52,7 @@ class SpeakingIndex extends React.Component {
                 </div>
                 <img className="speakingImage md:pl-4 hidden md:block" src="/speaking-mindful.png" alt="Frank speaking at a conference" />
               </div>
-              <div className="md:flex items-center py-2">
+              <div className="md:flex items-center py-2 px-6">
                 <img className="speakingImage last pl-4 md:pl-0 md:pr-4" src="/speaking-apex.png" alt="Frank speaking at a conference" />
                 <div className="md:w-9/12">
                   <h4 className="font-bold text-lg text-blu">Find your APEX: Transitioning from Senior to Lead</h4>

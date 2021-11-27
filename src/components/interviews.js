@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const InterviewListItem = ({ item }) => (<li><a href={item.linkHref} className="text-sm">{item.linkText}</a></li>);
+const InterviewListItem = ({ item }) => (<li><a href={item.linkHref} className="text-sm" target="_blank" rel="noreferrer">{item.linkText}</a></li>);
 
 const Interviews = ({ interviewWebList, interviewPodcastList, isHome }) => {
   return (

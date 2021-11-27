@@ -19,7 +19,7 @@ export default ({ article, isBlogHome }) => (
           }}
         />
       )}
-      {isBlogHome && <div className="text-blu text-sm pb-2">Read More &#8594;</div>}
+      {isBlogHome && <div className="text-blu text-sm pb-2 font-space uppercase">Read More &#8594;</div>}
     </div>
   </Link>
 )

@@ -11,14 +11,14 @@ const Hype = ({ data }) => (
   <Container className="hidden md:block">
     <CarouselProvider
       naturalSlideWidth={600}
-      naturalSlideHeight={150}
+      naturalSlideHeight={350}
       totalSlides={data.length}
       className={[styles.carousel, "m-auto relative px-10 md:px-20"].join(' ')}
     >
       <Slider>
         {data.map(({ node, index }) => (
           <Slide index={index} key={node.contentful_id}>
-            <figure className="flex items-center">
+            <figure className="flex items-center h-full">
               <Img fluid={node.picture.fluid} className="mr-4 md:mr-8" alt={node.picture.title} style={{ width: 90 }} />
               <div className="flex-1">
 

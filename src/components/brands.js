@@ -12,6 +12,5 @@ export default ({ data }) => (
         </li>
       ))}
     </ul>
-    <div className="shading"></div>
   </>
 )

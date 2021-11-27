@@ -384,7 +384,7 @@ p {
 .brands {
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 100%;
+  width: 100vw;
   white-space: nowrap;
 }
 
