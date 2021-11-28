@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
@@ -7,6 +8,8 @@ import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+
+import styles from './blog.module.css'
 
 const BlogIndex = ({ data, location }) => {
 
@@ -50,7 +53,23 @@ const BlogIndex = ({ data, location }) => {
               <ArticlePreview article={node} isBlogHome />
             </li>
           ))}
-          <li>TESTING</li>
+          <li>
+            <div className={styles.twitter}>
+              <div className={styles.twitterImage}>
+                <Img
+                  className="inline-block"
+                  alt={posts[0].node.author.image.title}
+                  fluid={posts[0].node.author.image.fluid}
+                />
+              </div>
+              <div className={[styles.twitterText, "inline-block"].join(' ')}>
+                <strong>Hey, I'm {posts[0].node.author.firstName}</strong>
+
+                <p>If you like what you’re reading, I invite you to say hello on <a href={`https://twitter.com/${posts[0].node.author.twitter}`} rel="noreferrer" target="_blank">Twitter</a> and follow along for updates.
+                </p>
+              </div>
+            </div>
+          </li>
           {laterPosts.map(({ node }) => (
             <li key={node.slug} className="mb-12">
               <ArticlePreview article={node} isBlogHome />
@@ -69,6 +88,16 @@ export const pageQuery = graphql`
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
+          author {
+            firstName
+            twitter
+            image {
+              title
+              fluid(maxWidth: 98) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+          }
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")

@@ -71,7 +71,7 @@ export const pageQuery = graphql`
         image {
           title
           fluid(maxWidth: 98) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid_withWebp
           }
         }
       }

@@ -24,18 +24,6 @@
   text-transform: uppercase;
 }
 
-/* .homeCopyWrapper:after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 10vw;
-  background-color: url(/bottom-black-bg.png);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  margin-top: -1px;
-} */
-
 .homeCopyButton {
   background-color: #20A6FF;
 }

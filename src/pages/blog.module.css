@@ -8,3 +8,28 @@
   font-size: 2em;
   overflow: hidden;
 }
+
+.twitter {
+  background-image: url(/quote.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  height: 140px;
+  margin: 0 auto 65px;
+  width: 670px;
+  position: relative;
+}
+
+.twitterImage {
+  position: absolute;
+  left: 0;
+  top: 14%;
+}
+
+.twitterImage > * {
+  width: 98px;
+}
+
+.twitterText {
+  padding-top: 28px;
+  padding-left: 120px;
+}

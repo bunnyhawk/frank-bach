@@ -94,7 +94,7 @@ export const pageQuery = graphql`
             contentful_id
             title
             fluid(maxHeight: 550, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           speakingTitle

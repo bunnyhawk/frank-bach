@@ -47,7 +47,21 @@ class BlogList extends React.Component {
                 <ArticlePreview article={node} isBlogHome />
               </li>
             ))}
-            <li>TESTING</li>
+            <li>
+              <div className="twitter">
+                <Img
+                  className="block w-24 mx-auto mb-3"
+                  alt={post.author.image.title}
+                  fluid={post.author.image.fluid}
+                />
+                <strong>Hey, I'm {post.author.firstName}</strong>
+
+                <p>If you like what you’re reading, I invite you to say hello on
+                  <a href={`https://twitter.com/${post.author.twitter}`} rel="noreferrer" target="_blank">Twitter</a>
+                  and follow along for updates.
+                </p>
+              </div>
+            </li>
             {laterPosts.map(({ node }) => (
               <li key={node.slug} className="mb-12">
                 <ArticlePreview article={node} isBlogHome />
@@ -70,6 +84,16 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          author {
+            firstName
+            twitter
+            image {
+              title
+              fluid(maxWidth: 98) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+          }
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")
