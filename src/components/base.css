@@ -475,10 +475,19 @@ p {
   display: inline-block;
   height: 65px;
   width: 65px;
-  /* margin: 0 auto; */
-  /* position: absolute; */
-  /* left: calc(50% - 70px); */
+
   z-index: 1;
+  -webkit-animation: rotation 60s infinite linear;
+  animation: rotation 60s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
 }
 
 
