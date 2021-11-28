@@ -18,7 +18,7 @@ const Hero = ({ data }) => {
         />
       </div>
       <div className={styles.heroHeadline}>
-        <h3 className="font-title text-5xl md:text-6xl uppercase mt-2 mx-auto">Designing for mindfulness</h3>
+        <h3 className="font-title text-3xl md:text-6xl mb-10 mt-2 mx-auto">Designing for mindfulness</h3>
       </div>
       <p className="hidden md:block font-space uppercase text-sm text-gray-400 mb-8">
         I’ve worked with some of the world’s most loved brands and products

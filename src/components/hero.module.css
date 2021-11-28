@@ -1,37 +1,26 @@
 .hero {
   position: relative;
   text-align: center;
-  
 }
 
-/* .heroHeadline {
-  height: calc(100vh + 5rem);
-  margin-top: -5rem;
-  margin-bottom: 5rem;
-  
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-} */
+.heroHeadline {
+  margin-top: -80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  position: relative;
+}
 
-/* @media only screen and (min-width: 639px) {
+@media only screen and (min-width: 639px) {
   .heroHeadline {
-    height: calc(100vh - 7rem);
-    position: sticky;
+    margin-top: -120px;
   }
-} */
+}
 
 .image {
   max-width: 716px;
   margin-left: auto;
   margin-right: auto;
-}
-
-
-
-.heroHeadline h3 {
-  max-width: 500px
 }
 
 .heroTitle {
@@ -44,8 +33,3 @@
   margin-bottom: 28px;
 }
 
-/* @media only screen and (min-width: 639px) {
-  .heroImageWrapper {
-    margin-bottom: 250px;
-  }
-} */

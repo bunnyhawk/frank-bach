@@ -4,6 +4,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import Navigation from './navigation'
 import Container from './container'
+import Sun from './sun'
 
 import Twitter from "../../static/twitter.svg"
 import Instagram from "../../static/instagram.svg"
@@ -32,7 +33,9 @@ const Header = ({ children, workTitles }) => {
           <Navigation className="nav" isMobile />
         </div>
         <div className="flex items-center">
-          <div className="flex-1 font-title text-lg uppercase"><Link to="/" className="text-black hover:text-blu">Frank Bach</Link></div>
+          <div className="flex-1 font-title text-lg uppercase">
+            <Link to="/" className="text-black hover:text-blu"><Sun />Frank Bach</Link>
+          </div>
           <div className="flex-1 text-center">
             <div className="flex items-center my-7">
               <div className="flex-1 text-lg">

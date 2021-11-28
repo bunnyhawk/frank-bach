@@ -384,7 +384,7 @@ p {
 .brands {
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 100vw;
+  /* width: 100vw; */
   width: 100%;
   white-space: nowrap;
 }
@@ -468,18 +468,16 @@ p {
 }
 
 .sunWrapper {
-  position: absolute;
-  top: calc(100vh - 80px);
-  width: 100vw;
+  display: inline-block;
 }
 
 .sun {
   display: inline-block;
-  height: 140px;
-  width: 140px;
-  margin: 0 auto;
-  position: absolute;
-  left: calc(50% - 70px);
+  height: 65px;
+  width: 65px;
+  /* margin: 0 auto; */
+  /* position: absolute; */
+  /* left: calc(50% - 70px); */
   z-index: 1;
 }
 
