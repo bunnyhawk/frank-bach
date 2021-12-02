@@ -32,7 +32,7 @@ class ContactIndex extends React.Component {
           <div className="flex flex-col md:flex-row mb-20">
             <ContactItem>
               <div className="font-bold"><span role="img" aria-label="Talking Head">🗣</span> Speaking engagements</div>
-              <Link to="#">Fill out this form</Link>
+              <a href="https://zmbm.typeform.com/to/Bc9lyJ" target="_blank" rel="noreferrer">Fill out this form</a>
             </ContactItem>
             <ContactItem>
               <div className="font-bold"><span role="img" aria-label="Painting with frame">🖼</span> Design projects</div>
