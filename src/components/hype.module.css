@@ -26,3 +26,7 @@
   height: 33px;
   right: 0;
 }
+
+figcaption {
+  font-size: 0.875rem;
+}

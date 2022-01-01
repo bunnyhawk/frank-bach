@@ -30,11 +30,11 @@ export default ({ isMobile, className }) => (
       ))}
       {isMobile && (
         <li className='mobile-social font-title text-2xl block uppercase flex mt-2'>
-          <a href="https://twitter.com/francois_bach" className="mr-6" target="_blank" rel="noreferrer">
+          <a href="https://twitter.com/zendadddy" className="mr-6" target="_blank" rel="noreferrer">
             <Twitter />
             <span className="sr-only">Twitter</span>
           </a>
-          <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer">
+          <a href="https://instagram.com/zen.daddy" target="_blank" rel="noreferrer">
             <Instagram />
             <span className="sr-only">Instagram</span>
           </a>

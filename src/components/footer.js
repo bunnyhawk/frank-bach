@@ -23,13 +23,13 @@ const Footer = ({ workTitles }) => {
               <div className="font-header mb-4">Follow along</div>
               <ul className="flex">
                 <li className="mr-5">
-                  <a href="https://twitter.com/francois_bach" className="icon" target="_blank" rel="noreferrer">
+                  <a href="https://twitter.com/zendadddy" className="icon" target="_blank" rel="noreferrer">
                     <Twitter />
                     <span className="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li className="mr-5">
-                  <a href="https://instagram.com/francoisbach_" className="icon" target="_blank" rel="noreferrer">
+                  <a href="https://instagram.com/zen.daddy" className="icon" target="_blank" rel="noreferrer">
                     <Instagram />
                     <span className="sr-only">Instagram</span>
                   </a>

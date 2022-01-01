@@ -64,7 +64,7 @@ body {
   font-family: "AllianceNo1-Light", sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #373F49;
+  color: #0a0a0a;
   /* background: #eee; */
   margin: 0;
   opacity: 0;
@@ -93,10 +93,7 @@ h3 {
   font-family: "AllianceNo1-Bold", sans-serif;
   font-size: 2em;
   font-weight: normal;
-
 }
-
-
 
 h3 {
   font-size: 1.25em

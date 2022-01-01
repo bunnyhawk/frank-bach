@@ -12,7 +12,12 @@
 }
 
 .homeCopy h3 {
+  font-size: 1.5em;
   margin-bottom: 30px;
+}
+
+.homeCopy p {
+  font-size: 1.2em;
 }
 
 .homeCopy strong {
@@ -21,6 +26,7 @@
 
 .homeCopy strong a {
   font-family: "SpaceMono-Regular";
+  font-size: 0.875rem;
   text-transform: uppercase;
 }
 

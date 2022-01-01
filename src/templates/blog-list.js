@@ -90,7 +90,7 @@ export const pageQuery = graphql`
             image {
               title
               fluid(maxWidth: 98) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -100,7 +100,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 1200, maxHeight: 700, resizingBehavior: FILL) {
-              ...GatsbyContentfulFluid_withWebp
+              ...GatsbyContentfulFluid
             }
           }
           description {

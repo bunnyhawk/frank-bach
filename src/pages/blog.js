@@ -20,10 +20,11 @@ const BlogIndex = ({ data, location }) => {
   let firstPosts = []
   let laterPosts = []
 
-  if (!posts) return
+  if (!posts || !posts.length) return;
 
-  posts.forEach((post, index) => {
-    post.node.tags.forEach((tag) => tags.add(tag))
+  [...posts].forEach((post, index) => {
+    const postTags = post.node.tags || [];
+    postTags.forEach((tag) => tags.add(tag))
     if (index < 2) {
       firstPosts.push(post)
     } else {
@@ -94,7 +95,7 @@ export const pageQuery = graphql`
             image {
               title
               fluid(maxWidth: 98) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -104,7 +105,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 1200, maxHeight: 700, resizingBehavior: FILL) {
-              ...GatsbyContentfulFluid_withWebp
+              ...GatsbyContentfulFluid
             }
           }
           description {

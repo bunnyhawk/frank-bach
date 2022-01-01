@@ -34,7 +34,7 @@ const Header = ({ children, workTitles }) => {
         </div>
         <div className="flex items-center">
           <div className="flex-1 font-title text-lg uppercase">
-            <Link to="/" className="text-black hover:text-blu"><Sun />Frank Bach</Link>
+            <Link to="/" className="text-black hover:text-black"><Sun />Frank Bach</Link>
           </div>
           <div className="flex-1 text-center">
             <div className="flex items-center my-7">
@@ -44,13 +44,13 @@ const Header = ({ children, workTitles }) => {
 
               <ul className="flex">
                 <li className="flex-1 mr-6">
-                  <a href="https://twitter.com/francois_bach" target="_blank" rel="noreferrer" className="icon">
+                  <a href="https://twitter.com/zendadddy" target="_blank" rel="noreferrer" className="icon">
                     <Twitter />
                     <span className="sr-only">Twitter</span>
                   </a>
                 </li>
                 <li className="flex-1 mr-2">
-                  <a href="https://instagram.com/francoisbach_" target="_blank" rel="noreferrer" className="icon">
+                  <a href="https://instagram.com/zen.daddy" target="_blank" rel="noreferrer" className="icon">
                     <Instagram />
                     <span className="sr-only">Instagram</span>
                   </a>

@@ -110,7 +110,7 @@ export const pageQuery = graphql`
                 maxHeight: 55
                 resizingBehavior: PAD
               ) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
           }
         }
@@ -126,7 +126,7 @@ export const pageQuery = graphql`
               # maxHeight: 480
               resizingBehavior: FILL
             ) {
-              ...GatsbyContentfulFluid_withWebp
+              ...GatsbyContentfulFluid
             }
           }
           story {

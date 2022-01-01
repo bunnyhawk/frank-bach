@@ -20,7 +20,7 @@ const ReadMore = () => {
             tags
             heroImage {
               fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -32,7 +32,7 @@ const ReadMore = () => {
             blogAdImage {
               title
               fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
             blogAdLink

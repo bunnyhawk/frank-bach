@@ -3,7 +3,8 @@ import Img from 'gatsby-image';
 
 import styles from './hero.module.css';
 
-const words = ['health', 'media', 'mindfulness'];
+const words = ['health', 'happiness', 'mindfulness'];
+
 
 const Hero = ({ data }) => {
   const [index, setIndex] = useState(0);

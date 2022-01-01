@@ -64,7 +64,7 @@ export const pageQuery = graphql`
             contentful_id
             title
             fluid(maxHeight: 45, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_withWebp
+              ...GatsbyContentfulFluid
             }  
           }
         }

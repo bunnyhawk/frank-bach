@@ -71,7 +71,7 @@ export const pageQuery = graphql`
         image {
           title
           fluid(maxWidth: 98) {
-            ...GatsbyContentfulFluid_withWebp
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -80,7 +80,7 @@ export const pageQuery = graphql`
       category
       heroImage {
         fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_withWebp
+          ...GatsbyContentfulFluid
         }
       }
       body {
