@@ -9,7 +9,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  min-height: 168px;
+  min-height: 80px;
   max-width: 295px;
 }
 
@@ -17,6 +17,7 @@
   .heroHeadline {
     margin-top: -120px;
     max-width: 600px;
+    min-height: 168px;
   }
 }
 
@@ -35,4 +36,3 @@
 .heroImageWrapper {
   margin-bottom: 28px;
 }
-

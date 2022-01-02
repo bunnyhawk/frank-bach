@@ -14,7 +14,7 @@ import styles from './blog.module.css'
 const BlogIndex = ({ data, location }) => {
 
   const posts = get(data, 'allContentfulBlogPost.edges')
-  const { buttonProps, itemProps, isOpen, setIsOpen } = useDropdownMenu(posts.length)
+  const { buttonProps, itemProps, isOpen } = useDropdownMenu(posts.length)
 
   let tags = new Set()
   let firstPosts = []
@@ -40,7 +40,7 @@ const BlogIndex = ({ data, location }) => {
       <Container isNarrow className="mt-7 md:pb-24">
         <div className="blogMenu rounded-t-lg shadow-md z1">
           <button {...buttonProps} className="text-lg font-header">All posts</button>
-          <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''} role='menu'>
+          <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
             {[...tags].map((tag, index) => (
               <li key={tag} className="font-space text-xs mb-2" {...itemProps[index]}>
                 {tag}

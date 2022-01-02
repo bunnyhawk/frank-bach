@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 
@@ -29,35 +29,35 @@ class SpeakingIndex extends React.Component {
                     __html: speakingContent.heroCopy.childMarkdownRemark.html,
                   }}
                 />
-                <img src="/speaking-icon.png" alt="splat" className="w-3/12" />
+                <img src="/speaking-icon.png" alt="splat" className="hidden md:block w-3/12" />
               </div>
 
               <WorkCarousel data={speakingContent.heroImages} slideHeight={550}
                 slightWidth={parseInt(speakingContent.heroImages[0].fluid.aspectRatio * 550, 10)} />
               <p className="font-light text-lg px-6 mt-10 mb-10 md:mb-0 mx-auto w-5/6 text-center">{speakingContent.speakingTitle}</p>
-              <div className="md:flex items-center py-2 px-6">
+              <div className="md:flex items-center py-2 px-6 mb-8 md:mb-0">
                 <img className="speakingImage pl-4 md:pl-0 md:pr-4" src="/speaking-joy.png" alt="Frank speaking at a conference" />
                 <div className="md:w-8/12">
                   <h4 className="font-bold text-lg text-blu">Designing for Joy</h4>
                   <p>How to go beyond functionality to add joy and delight to your digital products. Filled with engaging visuals and wraps up with a clear list of take-aways.</p>
-                  <Link to="/contact" className="text-blu text-sm font-space uppercase">Learn More &#8594;</Link>
+                  <a href="https://www.rethinkhq.com/developing-influence-and-leadership-skills-frank-bach" className="text-blu text-sm font-space uppercase" target="_blank" rel="noreferrer">Learn More &#8594;</a>
                 </div>
               </div>
-              <div className="md:flex items-center py-2 px-6">
+              <div className="md:flex items-center py-2 px-6 mb-8 md:mb-0">
                 <img className="speakingImage pl-4 block md:hidden" src="/speaking-mindful.png" alt="Frank speaking at a conference" />
                 <div className="md:w-8/12">
                   <h4 className="font-bold text-lg text-blu">Mindful Tips</h4>
                   <p>A series of mindfulness and meditation techniques that you can apply to your life, work, creative process, meetings, etc. to make you a stronger team player and individual contributor.</p>
-                  <Link to="/contact" className="text-blu text-sm font-space uppercase">Learn More &#8594;</Link>
+                  <a href="https://www.rethinkhq.com/developing-influence-and-leadership-skills-frank-bach" className="text-blu text-sm font-space uppercase" target="_blank" rel="noreferrer">Learn More &#8594;</a>
                 </div>
                 <img className="speakingImage md:pl-4 hidden md:block" src="/speaking-mindful.png" alt="Frank speaking at a conference" />
               </div>
-              <div className="md:flex items-center py-2 px-6">
+              <div className="md:flex items-center py-2 px-6 mb-8 md:mb-0">
                 <img className="speakingImage last pl-4 md:pl-0 md:pr-4" src="/speaking-apex.png" alt="Frank speaking at a conference" />
                 <div className="md:w-9/12">
                   <h4 className="font-bold text-lg text-blu">Find your APEX: Transitioning from Senior to Lead</h4>
                   <p>In this workshop we  focus on two topics: how to grow your career as a Lead Product Designer, and how to build trust and influence as an Individual Contributor. Through discussions and a few fun activities, this workshop will leave you with clarity and energy towards the next step of your career.</p>
-                  <Link to="/contact" className="text-blu text-sm font-space uppercase">Learn More &#8594;</Link>
+                  <a href="https://www.rethinkhq.com/developing-influence-and-leadership-skills-frank-bach" className="text-blu text-sm font-space uppercase" target="_blank" rel="noreferrer">Learn More &#8594;</a>
                 </div>
               </div>
             </Container>

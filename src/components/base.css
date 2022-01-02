@@ -148,6 +148,7 @@ a:hover {
   color: currentColor;
 }
 
+.header__link[aria-current="page"],
 .header__link:active,
 .header__link:focus,
 .header__link:hover {

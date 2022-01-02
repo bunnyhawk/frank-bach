@@ -17,7 +17,6 @@ import styles from './home.module.css';
 
 class RootIndex extends React.Component {
   render() {
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const workTitles = get(this, 'props.data.allContentfulWork.edges')
     const brands = get(this, 'props.data.allContentfulBrands.edges[0].node.logos')
     const homeContent = get(this, 'props.data.allContentfulHomePage.edges[0].node')
@@ -73,19 +72,6 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-        }
-      }
-    }
     allContentfulWork(sort: { fields: [postDate], order: DESC }) {
       edges {
         node {

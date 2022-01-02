@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import NavigationFooter from './navigation-footer'
 import Container from './container'
@@ -11,7 +10,7 @@ import Instagram from '../../static/instagram.svg'
 import LinkedIn from '../../static/linkedin.svg'
 import TikTok from '../../static/tiktok.svg'
 
-const Footer = ({ workTitles }) => {
+const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className={[styles.footer, "bg-black text-white relative"].join(' ')}>

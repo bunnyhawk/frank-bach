@@ -50,7 +50,7 @@ const Template = ({ children, workTitles, isShort }) => {
 
 
 
-      <Footer workTitles={workTitles} />
+      <Footer />
     </div>
   )
 }

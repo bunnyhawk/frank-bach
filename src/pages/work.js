@@ -18,13 +18,18 @@ class WorkIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title="Work - Frank Bach" />
-        <div className="pt-20">
-          <Container isNarrow className="mb-20 text-center">
-            <h1 className="font-header text-3xl mb-8">My design principles</h1>
-            <p className="px-8">Put users in the centre and business next to them<br />
-              Work in an iterative, flexible and collaborative manner<br />
-              Not everything that matters is measurable</p>
-            <img src={`/design-principles.png`} alt="design principles flow chart" className="w-9/12 m-auto" />
+        <div className="mt-10 md:mt-20">
+          <Container isNarrow className="px-6">
+            <h1 className="font-header text-3xl mb-2">My design principles</h1>
+            <div className="pb-14 text-2xl border-b border-grey">
+              <ul className="pb-8 list-disc	pl-6">
+                <li>Put users in the centre and business next to them</li>
+                <li>Work in an iterative, flexible and collaborative manner</li>
+                <li>Not everything that matters is measurable</li>
+                <li>Everything is a work in progress</li>
+              </ul>
+              <p>See some of my work <span role="img" aria-label="Down arrow">⤵️</span></p>
+            </div>
           </Container>
           {work.map(({ node }, index) => {
             const { title, slug, heroImages, description, role, body, workLinkText, workLinkHref } = node;

@@ -11,6 +11,7 @@ const WorkCarousel = ({ data, darkTheme, className, slideHeight, slightWidth }) 
       naturalSlideHeight={slideHeight}
       totalSlides={data.length}
       className={["m-auto relative", className].join(' ')}
+      isPlaying
     >
       <Slider>
         {data.map((node, index) => (

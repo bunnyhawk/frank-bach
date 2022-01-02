@@ -57,7 +57,7 @@ const Hero = ({ data }) => {
         />
       </div>
       <div className={styles.heroHeadline}>
-        <h3 className="font-title text-3xl md:text-6xl mb-10 mt-2 mx-auto text-left">
+        <h3 className="font-title text-3xl md:text-6xl md:mb-10 mt-2 mx-auto text-left">
           Designing for {`${words[index].substring(0, subIndex)}${blink ? "|" : " "}`}
         </h3>
       </div>

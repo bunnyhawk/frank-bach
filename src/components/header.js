@@ -33,7 +33,7 @@ const Header = ({ children, workTitles }) => {
           <Navigation className="nav" isMobile />
         </div>
         <div className="flex items-center">
-          <div className="flex-1 font-title text-lg uppercase">
+          <div className="font-title text-lg uppercase">
             <Link to="/" className="text-black hover:text-black"><Sun />Frank Bach</Link>
           </div>
           <div className="flex-1 text-center">
