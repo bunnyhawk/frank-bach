@@ -24,7 +24,7 @@ const Header = ({ children, workTitles }) => {
   )
 
   return (
-    <header id="header" className={[hideOnScroll ? 'visible' : 'hide', "fixed bg-white pl-10 pr-20 md:pr-10"].join(' ')}>
+    <header id="header" className={[hideOnScroll ? 'visible' : 'hide', "fixed bg-white pl-10 pr-16 md:pr-10"].join(' ')}>
       <Container>
         <div className={["menu block md:hidden"].join(' ')}>
           <input type="checkbox" />
@@ -43,7 +43,7 @@ const Header = ({ children, workTitles }) => {
               </div>
 
               <ul className="flex">
-                <li className="flex-1 mr-6">
+                <li className="flex-1 mr-2 md:mr-6">
                   <a href="https://twitter.com/zendadddy" target="_blank" rel="noreferrer" className="icon">
                     <Twitter />
                     <span className="sr-only">Twitter</span>

@@ -24,7 +24,7 @@ class SpeakingIndex extends React.Component {
             <Container isNarrow>
               <div className="flex items-center px-6 mt-10 md:mt-40 mb-14">
                 <h1
-                  className="w-full"
+                  className="w-full text-3xl md:text-4xl"
                   dangerouslySetInnerHTML={{
                     __html: speakingContent.heroCopy.childMarkdownRemark.html,
                   }}
@@ -55,8 +55,8 @@ class SpeakingIndex extends React.Component {
               <div className="md:flex items-center py-2 px-6 mb-8 md:mb-0">
                 <img className="speakingImage last pl-4 md:pl-0 md:pr-4" src="/speaking-apex.png" alt="Frank speaking at a conference" />
                 <div className="md:w-9/12">
-                  <h4 className="font-bold text-lg text-blu">Find your APEX: Transitioning from Senior to Lead</h4>
-                  <p>In this workshop we  focus on two topics: how to grow your career as a Lead Product Designer, and how to build trust and influence as an Individual Contributor. Through discussions and a few fun activities, this workshop will leave you with clarity and energy towards the next step of your career.</p>
+                  <h4 className="font-bold text-lg text-blu">Developing Influence and Leadership Skills</h4>
+                  <p>In this workshop we focus on two topics: How to improve self-confidence to influence and lead, and how to build visibility and credibility to influence. Through discussions and a few fun activities, this workshop will leave you with clarity and energy towards the next step of your career.</p>
                   <a href="https://www.rethinkhq.com/developing-influence-and-leadership-skills-frank-bach" className="text-blu text-sm font-space uppercase" target="_blank" rel="noreferrer">Learn More &#8594;</a>
                 </div>
               </div>

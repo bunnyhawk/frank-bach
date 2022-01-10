@@ -20,8 +20,8 @@ class WorkIndex extends React.Component {
         <Helmet title="Work - Frank Bach" />
         <div className="mt-10 md:mt-20">
           <Container isNarrow className="px-6">
-            <h1 className="font-header text-3xl mb-2">My design principles</h1>
-            <div className="pb-14 text-2xl border-b border-grey">
+            <h1 className="font-header text-2xl md:text-3xl mb-2">My design principles</h1>
+            <div className="pb-14 text-xl md:text-2xl border-b border-grey">
               <ul className="pb-8 list-disc	pl-6">
                 <li>Put users in the centre and business next to them</li>
                 <li>Work in an iterative, flexible and collaborative manner</li>
@@ -38,7 +38,7 @@ class WorkIndex extends React.Component {
               <section id={slug}>
                 <div className={isEven ? [styles.workDark, 'bg-black text-white pt-32 relative'].join(' ') : 'bg-white text-black pt-20'}>
                   <Container isNarrow className="px-6">
-                    <h2 className="font-header text-4xl">{title}</h2>
+                    <h2 className="font-header text-3xl md:text-4xl">{title}</h2>
                     <p
                       className="text-2xl"
                       dangerouslySetInnerHTML={{

@@ -38,8 +38,8 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
       <Container isNarrow className="mt-7 md:pb-24">
-        <div className="blogMenu rounded-t-lg shadow-md z1">
-          <button {...buttonProps} className="text-lg font-header">All posts</button>
+        <div className="blogMenu z1 mb-4">
+          <button {...buttonProps} className="block rounded-t-lg text-lg font-header">All posts</button>
           <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
             {[...tags].map((tag, index) => (
               <li key={tag} className="font-space text-xs mb-2" {...itemProps[index]}>

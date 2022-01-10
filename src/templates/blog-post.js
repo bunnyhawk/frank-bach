@@ -40,7 +40,7 @@ class BlogPostTemplate extends React.Component {
                 fluid={post.author.image.fluid}
               />
               <div className="font-header text-base text-black">{post.author.name}</div>
-              <div className="text-xs text-blu uppercase pb-2">Follow on Twitter</div>
+              <div className="font-space text-xs text-blu uppercase pb-2">Follow on Twitter</div>
             </a>
           </div>
 
