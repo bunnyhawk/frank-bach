@@ -8,6 +8,7 @@ import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import Arrow from '../../static/arrow.svg'
 
 import styles from './blog.module.css'
 
@@ -37,9 +38,15 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
-      <Container isNarrow className="mt-7 md:pb-24">
+      <Container isNarrow className="blogContainer mt-7 md:pb-24">
         <div className="blogMenu z1 mb-4">
-          <button {...buttonProps} className="block rounded-t-lg text-lg font-header">All posts</button>
+          <button
+            {...buttonProps}
+            className="flex rounded-t-lg text-lg font-header items-center"
+          >
+            <span className="mr-2">All posts</span>
+            <Arrow />
+          </button>
           <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
             {[...tags].map((tag, index) => (
               <li key={tag} className="font-space text-xs mb-2" {...itemProps[index]}>
