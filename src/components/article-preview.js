@@ -3,7 +3,15 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default ({ article, isBlogHome }) => {
-  console.log(article.description)
+  const escapeHTML = str => str ? str.replace(/[&<>'"]/g,
+    tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag])) : '';
+
   return (
     <Link to={`/blog/${article.slug}`} className="text-black w-full">
       <Img alt={article.heroImage.title} fluid={article.heroImage.fluid} className={isBlogHome ? 'mb-7' : ''} />
@@ -13,7 +21,7 @@ export default ({ article, isBlogHome }) => {
         </h3>
         <p
           dangerouslySetInnerHTML={{
-            __html: article.description?.childMarkdownRemark?.html,
+            __html: escapeHTML(article.description?.childMarkdownRemark?.html),
           }}
         />
         {isBlogHome && <div className="text-blu text-sm pb-2 font-space uppercase">Read More &#8594;</div>}
