@@ -33,8 +33,6 @@ const BlogIndex = ({ data, location }) => {
     }
   })
 
-  console.log(posts)
-
   return (
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
