@@ -16,7 +16,7 @@ class BlogList extends React.Component {
     let firstPosts = []
     let laterPosts = []
 
-    if (!posts) return
+    if (!posts && !posts[0].node.article.description) return
 
     posts.forEach((post, index) => {
       post.node.tags.forEach((tag) => tags.add(tag))
