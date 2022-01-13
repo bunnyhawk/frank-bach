@@ -43,7 +43,6 @@ const ReadMore = () => {
   `)
   const posts = get(data, 'allContentfulBlogPost.edges')
   const blogAd = get(data, 'allContentfulBlogAd.edges[0].node')
-  console.log(blogAd)
 
   return (
     <section className={[styles.readMoreWrapper, 'relative -mb-20'].join(' ')}>
