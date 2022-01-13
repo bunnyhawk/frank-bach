@@ -19,11 +19,7 @@ export default ({ article, isBlogHome }) => {
         <h3 className="text-xl">
           {article.title}
         </h3>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: escapeHTML(article.description?.childMarkdownRemark?.html),
-          }}
-        />
+        <p>{escapeHTML(article.description?.childMarkdownRemark?.html)}</p>
         {isBlogHome && <div className="text-blu text-sm pb-2 font-space uppercase">Read More &#8594;</div>}
       </div>
     </Link>
