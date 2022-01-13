@@ -14,9 +14,13 @@
   background-repeat: no-repeat;
   background-position: top right;
   height: 140px;
-  margin: 0 auto 65px;
+  margin: 0 auto;
   width: 670px;
   position: relative;
+  width: 95%;
+  height: auto;
+  background-size: 100% 100%;
+  font-size: 14px;
 }
 
 .twitterImage {
@@ -32,4 +36,14 @@
 .twitterText {
   padding-top: 28px;
   padding-left: 120px;
+  padding-right: 20px;
+}
+
+@media only screen and (min-width: 639px) {
+  .twitter {
+    height: 140px;
+    margin: 0 auto 65px;
+    width: 670px;
+    font-size: 16px;
+  }
 }

@@ -47,7 +47,7 @@ class BlogList extends React.Component {
                 <ArticlePreview article={node} isBlogHome />
               </li>
             ))}
-            <li>
+            <li className="mb-12">
               <div className="twitter">
                 <Img
                   className="block w-24 mx-auto mb-3"
