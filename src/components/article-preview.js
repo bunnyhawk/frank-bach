@@ -6,8 +6,6 @@ export default ({ article, isBlogHome }) => {
   const escapeHTML = str => str ? str.replace(/[&<>'"]/g,
     tag => ({
       '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
       "'": '&#39;',
       '"': '&quot;'
     }[tag])) : '';
@@ -19,7 +17,11 @@ export default ({ article, isBlogHome }) => {
         <h3 className="text-xl">
           {article.title}
         </h3>
-        <p>{escapeHTML(article.description?.childMarkdownRemark?.html)}</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: escapeHTML(article.description?.childMarkdownRemark?.html),
+          }}
+        />
         {isBlogHome && <div className="text-blu text-sm pb-2 font-space uppercase">Read More &#8594;</div>}
       </div>
     </Link>
