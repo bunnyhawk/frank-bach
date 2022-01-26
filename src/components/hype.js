@@ -4,7 +4,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import Container from './container'
-import styles from './hype.module.css'
+import * as styles from './hype.module.css'
 
 
 const Hype = ({ data }) => (

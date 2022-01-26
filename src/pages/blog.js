@@ -10,7 +10,7 @@ import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Arrow from '../../static/arrow.svg'
 
-import styles from './blog.module.css'
+import * as styles from './blog.module.css'
 
 const BlogIndex = ({ data, location }) => {
 

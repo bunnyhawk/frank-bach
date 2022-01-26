@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Container from './container'
-import styles from './lets-work.module.css'
+import * as styles from './lets-work.module.css'
 
 const LetsWork = ({ isDark }) => {
   return (

@@ -3,7 +3,7 @@ import React from 'react'
 import NavigationFooter from './navigation-footer'
 import Container from './container'
 
-import styles from './footer.module.css'
+import * as styles from './footer.module.css'
 
 import Twitter from '../../static/twitter.svg'
 import Instagram from '../../static/instagram.svg'

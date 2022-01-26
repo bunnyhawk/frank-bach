@@ -8,7 +8,7 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import ReadMore from '../components/read-more'
 
-import heroStyles from '../components/hero.module.css'
+import * as styles from '../components/hero.module.css'
 
 
 class BlogPostTemplate extends React.Component {
@@ -20,9 +20,9 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <Container>
           <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div className={[heroStyles.hero, 'mb-10'].join(' ')}>
+          <div className={[styles.hero, 'mb-10'].join(' ')}>
             <Img
-              className={heroStyles.heroImage}
+              className={styles.image}
               alt={post.title}
               fluid={post.heroImage.fluid}
             />

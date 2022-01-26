@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './sun.module.css';
+import * as styles from './sun.module.css';
 
 const Sun = () => {
   return (

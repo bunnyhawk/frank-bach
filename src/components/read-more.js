@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 import Container from './container'
 import ArticlePreview from './article-preview'
 
-import styles from './read-more.module.css'
+import * as styles from './read-more.module.css'
 
 const ReadMore = () => {
   const data = useStaticQuery(graphql`

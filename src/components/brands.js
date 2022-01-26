@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-import styles from './brands.module.css'
+import * as styles from './brands.module.css'
 
 export default ({ data }) => (
   <>

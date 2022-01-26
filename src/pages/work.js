@@ -8,7 +8,7 @@ import Container from '../components/container'
 import WorkCarousel from '../components/work-carousel'
 import LetsWork from '../components/lets-work'
 
-import styles from './work.module.css'
+import * as styles from './work.module.css'
 
 class WorkIndex extends React.Component {
   render() {

@@ -13,7 +13,7 @@ import Interviews from '../components/interviews';
 import Hype from '../components/hype';
 import CtaButtonLink from '../components/cta-button-link'
 
-import styles from './home.module.css';
+import * as styles from './home.module.css';
 
 class RootIndex extends React.Component {
   render() {
