@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
@@ -32,12 +32,13 @@ const BlogIndex = ({ data, location }) => {
       laterPosts.push(post)
     }
   })
+  console.log(posts, tags)
 
   return (
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
       <Container isNarrow className="blogContainer mt-7 md:pb-24">
-        <div className="blogMenu z1 mb-4">
+        {/* <div className="blogMenu z1 mb-4">
           <button
             {...buttonProps}
             className="flex rounded-t-lg text-lg font-header items-center"
@@ -48,11 +49,11 @@ const BlogIndex = ({ data, location }) => {
           <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
             {[...tags].map((tag, index) => (
               <li key={tag} className="font-space text-xs mb-2" {...itemProps[index]}>
-                {tag}
+                <Link to={`/tags/${tag}`}>{tag}</Link>
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         <ul>
           {firstPosts.map(({ node }) => (
             <li key={node.slug} className="mb-12">

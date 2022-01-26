@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 
@@ -40,7 +40,7 @@ class SpeakingIndex extends React.Component {
                 <div className="md:w-8/12">
                   <h4 className="font-bold text-lg text-blu">Designing for Joy</h4>
                   <p>How to go beyond functionality to add joy and delight to your digital products. Filled with engaging visuals and wraps up with a clear list of take-aways.</p>
-                  <a href="https://www.rethinkhq.com/developing-influence-and-leadership-skills-frank-bach" className="text-blu text-sm font-space uppercase" target="_blank" rel="noreferrer">Learn More &#8594;</a>
+                  <Link to="/contact" className="text-blu text-sm font-space uppercase">Learn More &#8594;</Link>
                 </div>
               </div>
               <div className="md:flex items-center py-2 px-6 mb-8 md:mb-0">
