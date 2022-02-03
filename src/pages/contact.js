@@ -1,7 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/layout'
@@ -20,8 +18,6 @@ const ContactItem = ({ children }) => (
 
 class ContactIndex extends React.Component {
   render() {
-    const brandsCollaborated = get(this, 'props.data.allContentfulBrandsCollaborated.edges[0].node.brand')
-
     return (
       <Layout location={this.props.location}>
         <Helmet title="Contact - Frank Bach" />
@@ -43,10 +39,6 @@ class ContactIndex extends React.Component {
               <a href="mailto:f@francoisbach.com">f@francoisbach.com</a>
             </ContactItem>
           </div>
-          <h2 className="font-space text-center text-sm mb-6 uppercase text-grey">Brands I’ve collaborated with</h2>
-          <ul className="flex flex-wrap mx-2">
-            {brandsCollaborated.map(brandListItem)}
-          </ul>
         </Container>
       </Layout>
     )
@@ -54,21 +46,3 @@ class ContactIndex extends React.Component {
 }
 
 export default ContactIndex;
-
-export const pageQuery = graphql`
-  query ContactIndexQuery {
-    allContentfulBrandsCollaborated(filter: {}) {
-      edges {
-        node {
-          brand {
-            contentful_id
-            title
-            fluid(maxHeight: 45, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid
-            }  
-          }
-        }
-      }
-    }
-  }
-`
