@@ -23,12 +23,11 @@ class WorkIndex extends React.Component {
             <h1 className="font-header text-2xl md:text-3xl mb-2">My design principles</h1>
             <div className="pb-14 text-xl md:text-2xl border-b border-grey">
               <ul className="pb-8 list-disc	pl-6">
-                <li>Put users in the centre and business next to them</li>
-                <li>Work in an iterative, flexible and collaborative manner</li>
-                <li>Not everything that matters is measurable</li>
-                <li>Everything is a work in progress</li>
+                <li>In my work, I balance human needs, business goals, and technology. If you put people in the centre, the rest of the pieces fall into place.</li>
+                <li>Keep things iterative, flexible and collaborative. Be open to hearing other's ideas.</li>
+                <li>Rely on your gut for experimentation, but let data guide decision-making. Measure what matters (but not everything that matters is measurable).</li>
               </ul>
-              <p>See some of my work <span role="img" aria-label="Down arrow">⤵️</span></p>
+              <p>Below is a small selection of work and teams I've been a part of over the past decade. <span role="img" aria-label="Down arrow">⤵️</span></p>
             </div>
           </Container>
           {work.map(({ node }, index) => {

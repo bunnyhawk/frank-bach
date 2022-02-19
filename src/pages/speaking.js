@@ -8,12 +8,14 @@ import Layout from '../components/layout'
 import Talks from '../components/talks'
 import Interviews from '../components/interviews'
 import WorkCarousel from '../components/work-carousel'
+import Hype from '../components/hype'
 
 class SpeakingIndex extends React.Component {
   render() {
     const speakingContent = get(this, 'props.data.allContentfulSpeakingPage.edges[0].node')
     const homeContent = get(this, 'props.data.allContentfulHomePage.edges[0].node')
     const talkItems = get(this, 'props.data.allContentfulTalkItem.edges')
+    const hypeContent = get(this, 'props.data.allContentfulHypeItem.edges')
 
     return (
       <Layout location={this.props.location}>
@@ -69,8 +71,9 @@ class SpeakingIndex extends React.Component {
               interviewWebList={homeContent.interviewWeb}
               interviewPodcastList={homeContent.interviewPodcast}
             />
-          </Container>
 
+          </Container>
+          <Hype data={hypeContent} />
         </div>
 
       </Layout>
@@ -125,6 +128,32 @@ export const pageQuery = graphql`
           location
           city
 
+        }
+      }
+    }
+    allContentfulHypeItem(
+      filter: {}
+    ) {
+      edges {
+        node {
+          contentful_id
+          name
+          title
+          quote {
+            childMarkdownRemark {
+              html
+            }
+          }
+          picture {
+            title
+            fluid(
+              maxWidth: 100
+              maxHeight: 100
+              resizingBehavior: PAD
+            ) {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

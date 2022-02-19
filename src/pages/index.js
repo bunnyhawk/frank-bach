@@ -10,7 +10,6 @@ import Brands from '../components/brands'
 import TopBackground from '../components/top-bg';
 import LetsWork from '../components/lets-work';
 import Interviews from '../components/interviews';
-import Hype from '../components/hype';
 import CtaButtonLink from '../components/cta-button-link'
 
 import * as styles from './home.module.css';
@@ -22,7 +21,6 @@ class RootIndex extends React.Component {
     const homeContent = get(this, 'props.data.allContentfulHomePage.edges[0].node')
     const storyCopy = get(homeContent, 'story.childMarkdownRemark')
     const speakingCopy = get(homeContent, 'speaking.childMarkdownRemark')
-    const hypeContent = get(this, 'props.data.allContentfulHypeItem.edges')
 
     return (
       <Layout location={this.props.location} workTitles={workTitles}>
@@ -61,7 +59,6 @@ class RootIndex extends React.Component {
             isHome
           />
         </Container>
-        <Hype data={hypeContent} />
         <LetsWork />
       </Layout>
     )
@@ -134,32 +131,6 @@ export const pageQuery = graphql`
             contentful_id
             linkText
             linkHref
-          }
-        }
-      }
-    }
-    allContentfulHypeItem(
-      filter: {}
-    ) {
-      edges {
-        node {
-          contentful_id
-          name
-          title
-          quote {
-            childMarkdownRemark {
-              html
-            }
-          }
-          picture {
-            title
-            fluid(
-              maxWidth: 100
-              maxHeight: 100
-              resizingBehavior: PAD
-            ) {
-              ...GatsbyContentfulFluid
-            }
           }
         }
       }
