@@ -19,17 +19,19 @@ class WorkIndex extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title="Work - Frank Bach" />
         <div className="mt-10 md:mt-20">
-          <Container isNarrow className="px-6">
-            <h1 className="font-header text-2xl md:text-3xl mb-2">My design principles</h1>
-            <div className="pb-14 text-xl md:text-2xl border-b border-grey">
-              <ul className="pb-8 list-disc	pl-6">
-                <li>In my work, I balance human needs, business goals, and technology. If you put people in the centre, the rest of the pieces fall into place.</li>
-                <li>Keep things iterative, flexible and collaborative. Be open to hearing other's ideas.</li>
-                <li>Rely on your gut for experimentation, but let data guide decision-making. Measure what matters (but not everything that matters is measurable).</li>
-              </ul>
-              <p>Below is a small selection of work and teams I've been a part of over the past decade. <span role="img" aria-label="Down arrow">⤵️</span></p>
-            </div>
-          </Container>
+          <div className="border-b border-grey">
+            <Container isNarrow className="px-6">
+              <h1 className="font-header text-2xl md:text-3xl mb-8">My design principles</h1>
+              <div className="pb-14 text-xl md:text-2xl">
+                <ul>
+                  <li className="pb-6">In my work, I balance human needs, business goals, and technology. If you put people in the centre, the rest of the pieces fall into place.</li>
+                  <li className="pb-6">Keep things iterative, flexible and collaborative. Be open to hearing other's ideas.</li>
+                  <li className="pb-6">Rely on your gut for experimentation, but let data guide decision-making. Measure what matters (but not everything that matters is measurable).</li>
+                  <li className="pb-6">Below is a small selection of work and teams I've been a part of over the past decade. <span role="img" aria-label="Down arrow">⤵️</span></li>
+                </ul>
+              </div>
+            </Container>
+          </div>
           {work.map(({ node }, index) => {
             const { title, slug, heroImages, description, role, body, workLinkText, workLinkHref } = node;
             const isEven = index % 2;

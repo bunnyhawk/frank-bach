@@ -19,7 +19,7 @@ const ContactItem = ({ children }) => (
 class ContactIndex extends React.Component {
   render() {
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} isShort>
         <Helmet title="Contact - Frank Bach" />
         <Container isNarrow className="mt-10 mb-40">
           <div className="m-auto mb-12" style={{ width: 225 }}>
