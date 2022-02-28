@@ -1,10 +1,8 @@
 import React from 'react';
 
-import * as styles from './sun.module.css';
-
 const Sun = () => {
   return (
-    <div className={[styles.sunWrapper, 'mr-2 inline-block'].join(' ')}>
+    <div className="mr-2 inline-block">
       <img className="sun" src="/sun_symbol.png" alt="an illustrative sun" />
     </div>
   );

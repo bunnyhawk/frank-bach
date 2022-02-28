@@ -24,7 +24,7 @@ const Header = ({ children, workTitles }) => {
   )
 
   return (
-    <header id="header" className={[hideOnScroll ? 'visible' : 'hide', "fixed bg-white pl-10 pr-16 md:pr-10"].join(' ')}>
+    <header id="header" className={[hideOnScroll ? 'visible' : 'hide', "fixed bg-white pl-4 pr-16 md:pr-10"].join(' ')}>
       <Container>
         <div className={["menu block md:hidden"].join(' ')}>
           <input type="checkbox" />
@@ -33,7 +33,7 @@ const Header = ({ children, workTitles }) => {
           <Navigation className="nav" isMobile />
         </div>
         <div className="flex items-center">
-          <div className="md:flex-1 font-title text-lg uppercase">
+          <div className="md:flex-1 font-title text-xl uppercase pt-2">
             <Link to="/" className="text-black hover:text-black"><Sun />Frank Bach</Link>
           </div>
           <div className="flex-1 text-center">
@@ -42,7 +42,7 @@ const Header = ({ children, workTitles }) => {
                 <Navigation className={["hidden md:block"].join(' ')} />
               </div>
 
-              <ul className="flex">
+              <ul className="hidden md:flex">
                 <li className="flex-1 mr-2 md:mr-6">
                   <a href="https://twitter.com/zendadddy" target="_blank" rel="noreferrer" className="icon">
                     <Twitter />

@@ -285,7 +285,7 @@ p {
 .menu {
   display: block;
   position: absolute;
-  top: 36px;
+  top: 24px;
   right: 20px;
   z-index: 1;
   -webkit-user-select: none;
@@ -295,6 +295,7 @@ p {
 @media only screen and (min-width: 639px) {
   .menu {
     right: 24px;
+    top: 36px;
   }
 }
 
