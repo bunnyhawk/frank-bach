@@ -49,7 +49,7 @@ class RootIndex extends React.Component {
           </Container>
 
         </div>
-        <div className="relative hidden md:block">
+        <div className="relative">
           <img src="/sun-rays.svg" alt="graphic of sun rays" className={[styles.homeImage, 'absolute'].join(' ')} />
         </div>
         <Container isNarrow className="speakingGrid mb-10 pt-10 md:pt-40">
