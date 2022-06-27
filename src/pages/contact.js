@@ -13,7 +13,7 @@ const brandListItem = (brand) => (
 );
 
 const ContactItem = ({ children }) => (
-  <div className="flex-1 text-center mb-6">{children}</div>
+  <div className="text-center mb-6 mx-2">{children}</div>
 )
 
 class ContactIndex extends React.Component {

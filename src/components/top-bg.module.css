@@ -1,6 +1,8 @@
 .footerBg {
   height: 100%;
   max-width: 100vw;
+  margin-bottom: -1px;
+  min-height: 16px;
 }
 
 .footerBg svg {

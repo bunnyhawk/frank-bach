@@ -50,7 +50,7 @@ class SpeakingIndex extends React.Component {
                 <div className="md:w-8/12">
                   <h4 className="font-bold text-lg text-blu">Mindful Tips</h4>
                   <p>A series of mindfulness and meditation techniques that you can apply to your life, work, creative process, meetings, etc. to make you a stronger team player and individual contributor.</p>
-                  <a href="https://www.rethinkhq.com/developing-influence-and-leadership-skills-frank-bach" className="text-blu text-sm font-space uppercase" target="_blank" rel="noreferrer">Learn More &#8594;</a>
+                  <Link to="/contact" className="text-blu text-sm font-space uppercase">Learn More &#8594;</Link>
                 </div>
                 <img className="speakingImage md:pl-4 hidden md:block" src="/speaking-mindful.png" alt="Frank speaking at a conference" />
               </div>

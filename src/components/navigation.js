@@ -9,7 +9,7 @@ const menuItems = [
   { title: 'Work', href: '/work/', },
   { title: 'Speaking', href: '/speaking/' },
   { title: 'Blog', href: '/blog/' },
-  { title: 'Shop', href: 'https://sunshineshop.la/', isExternal: true },
+  { title: 'Shop', href: 'https://www.sunshineshop.la/collection/sunshine/', isExternal: true },
   { title: 'Contact', href: '/contact/' },
 ]
 
