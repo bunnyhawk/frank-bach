@@ -1,7 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import Container from './container'
 import ArticlePreview from './article-preview'
@@ -19,9 +19,11 @@ const ReadMore = () => {
             publishDate(formatString: "MMMM Do, YYYY")
             tags
             heroImage {
-              fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED,
+                width: 300,
+                height: 200
+              )
             }
           }
         }
@@ -31,9 +33,12 @@ const ReadMore = () => {
           node {
             blogAdImage {
               title
-              fluid(maxWidth: 300, maxHeight: 200, resizingBehavior: FILL) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED,
+                width: 300,
+                height: 200
+              )
+   
             }
             blogAdLink
           }
@@ -57,9 +62,9 @@ const ReadMore = () => {
             ))}
             <li className="w-full md:w-2/6 md:mx-12 mb-6 md:my-4">
               <a href={blogAd.blogAdLink} className="text-black w-full">
-                <Img
+                <GatsbyImage
                   alt={blogAd.blogAdImage.title}
-                  fluid={blogAd.blogAdImage.fluid}
+                  image={blogAd.blogAdImage.gatsbyImageData}
                 />
                 <div className="px-6 md:px-0 pt-4">
                   <h3 className="text-xl">

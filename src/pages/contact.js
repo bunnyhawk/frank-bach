@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/layout'
@@ -8,7 +8,7 @@ import Container from '../components/container'
 
 const brandListItem = (brand) => (
   <li key={brand.contentful_id} className="w-full relative" style={{ maxHeight: 45 }}>
-    <Img alt={brand.title} fluid={brand.fluid} className="h-full" imgStyle={{ objectFit: 'contain' }} />
+    <GatsbyImage alt={brand.title} image={brand.gatsbyImageData} className="h-full" imgStyle={{ objectFit: 'contain' }} />
   </li>
 );
 

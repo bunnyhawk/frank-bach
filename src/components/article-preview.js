@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 export default ({ article, isBlogHome }) => {
   return (
     <Link to={`/blog/${article.slug}`} className="text-black w-full">
-      <Img alt={article.heroImage.title} fluid={article.heroImage.fluid} className={isBlogHome ? 'mb-7' : ''} />
+      <GatsbyImage alt={article.heroImage.title} image={article.heroImage.gatsbyImageData} className={isBlogHome ? 'mb-7' : ''} />
       <div className="px-6 md:px-0 pt-4">
         <h3 className="text-xl">
           {article.title}

@@ -1,21 +1,21 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
-import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
+// import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import Arrow from '../../static/arrow.svg'
+// import Arrow from '../../static/arrow.svg'
 
 import * as styles from './blog.module.css'
 
 const BlogIndex = ({ data, location }) => {
 
   const posts = get(data, 'allContentfulBlogPost.edges')
-  const { buttonProps, itemProps, isOpen } = useDropdownMenu(posts.length)
+  // const { buttonProps, itemProps, isOpen } = useDropdownMenu(posts.length)
 
   let tags = new Set()
   let firstPosts = []
@@ -38,22 +38,29 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
       <Container isNarrow className="blogContainer mt-7 md:pb-24">
-        {/* <div className="blogMenu z1 mb-4">
-          <button
+        {/* <div className="blogMenu z1 mb-4"> */}
+        {/* <button
             {...buttonProps}
             className="flex rounded-t-lg text-lg font-header items-center"
           >
             <span className="mr-2">All posts</span>
             <Arrow />
-          </button>
-          <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
+          </button> */}
+        {/* <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
             {[...tags].map((tag, index) => (
               <li key={tag} className="font-space text-xs mb-2" {...itemProps[index]}>
                 <Link to={`/tags/${tag}`}>{tag}</Link>
               </li>
             ))}
-          </ul>
-        </div> */}
+          </ul> */}
+        {/* <ul className='shadow-md visible rounded-b-lg'>
+          {[...tags].map((tag, index) => (
+            <li key={tag} className="font-space text-xs mb-2">
+              <Link to={`/tags/${tag.toLowerCase()}`}>{tag}</Link>
+            </li>
+          ))}
+        </ul> */}
+        {/* </div> */}
         <ul>
           {firstPosts.map(({ node }) => (
             <li key={node.slug} className="mb-12">
@@ -63,10 +70,10 @@ const BlogIndex = ({ data, location }) => {
           <li>
             <div className={styles.twitter}>
               <div className={styles.twitterImage}>
-                <Img
+                <GatsbyImage
                   className="inline-block"
                   alt={posts[0].node.author.image.title}
-                  fluid={posts[0].node.author.image.fluid}
+                  image={posts[0].node.author.image.gatsbyImageData}
                 />
               </div>
               <div className={[styles.twitterText, "inline-block"].join(' ')}>
@@ -100,9 +107,8 @@ export const pageQuery = graphql`
             twitter
             image {
               title
-              fluid(maxWidth: 98) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(width: 98, layout: CONSTRAINED)
+  
             }
           }
           title
@@ -110,9 +116,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 1200, maxHeight: 700, resizingBehavior: FILL) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(width: 1200, height: 700, layout: CONSTRAINED)
           }
           description {
             childMarkdownRemark {

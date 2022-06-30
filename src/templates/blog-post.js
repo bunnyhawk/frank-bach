@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
@@ -21,10 +21,9 @@ class BlogPostTemplate extends React.Component {
         <Container>
           <Helmet title={`${post.title} | ${siteTitle}`} />
           <div className={[styles.hero, 'mb-10'].join(' ')}>
-            <Img
-              className={styles.image}
+            <GatsbyImage
               alt={post.title}
-              fluid={post.heroImage.fluid}
+              image={post.heroImage.gatsbyImageData}
             />
           </div>
           <div className="relative md:absolute md:w-40 pb-8 md:pb-0">
@@ -34,10 +33,10 @@ class BlogPostTemplate extends React.Component {
               rel="noreferrer"
               target="_blank"
             >
-              <Img
+              <GatsbyImage
                 className="block w-24 mx-auto mb-3"
                 alt={post.author.image.title}
-                fluid={post.author.image.fluid}
+                image={post.author.image.gatsbyImageData}
               />
               <div className="font-header text-base text-black">{post.author.name}</div>
               <div className="font-space text-xs text-blu uppercase pb-2">Follow on Twitter</div>
@@ -70,18 +69,14 @@ export const pageQuery = graphql`
         twitter
         image {
           title
-          fluid(maxWidth: 98) {
-            ...GatsbyContentfulFluid
-          }
+          gatsbyImageData(height: 98, layout: CONSTRAINED)
         }
       }
       title
       publishDate(formatString: "MMMM Do, YYYY")
       category
       heroImage {
-        fluid(maxWidth: 1180, resizingBehavior: FILL) {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
       body {
         childMarkdownRemark {

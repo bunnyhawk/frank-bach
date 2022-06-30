@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Img from 'gatsby-image';
+import React, { useState, useEffect } from 'react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import * as styles from './hero.module.css';
 
@@ -7,6 +7,7 @@ const words = ['health', 'happiness', 'mindfulness'];
 
 
 const Hero = ({ data }) => {
+
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [blink, setBlink] = useState(true);
@@ -49,11 +50,10 @@ const Hero = ({ data }) => {
     <div className={styles.hero}>
 
       <div className={styles.heroImageWrapper}>
-        <Img
+        <GatsbyImage
           className={styles.image}
-          alt={data.name}
-          fluid={data.fluid}
-          backgroundColor={true}
+          alt={data.title}
+          image={data.gatsbyImageData}
         />
       </div>
       <div className={styles.heroHeadline}>

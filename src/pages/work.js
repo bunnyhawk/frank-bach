@@ -14,7 +14,6 @@ class WorkIndex extends React.Component {
   render() {
     const work = get(this, 'props.data.allContentfulWork.edges')
 
-
     return (
       <Layout location={this.props.location}>
         <Helmet title="Work - Frank Bach" />
@@ -37,7 +36,7 @@ class WorkIndex extends React.Component {
             const isEven = index % 2;
             return (
               <section id={slug}>
-                <div className={isEven ? [styles.workDark, 'bg-black text-white pt-32 relative'].join(' ') : 'bg-white text-black pt-20'}>
+                <div className={isEven ? [styles.workDark, 'bg-black text-white pt-32 mb-20 relative'].join(' ') : 'bg-white text-black pt-20'}>
                   <Container isNarrow className="px-6">
                     <h2 className="font-header text-3xl md:text-4xl">{title}</h2>
                     <p
@@ -51,8 +50,8 @@ class WorkIndex extends React.Component {
                     data={heroImages}
                     className="w-5/6 mt-10"
                     darkTheme={!!isEven}
-                    slideHeight={500}
-                    slightWidth={parseInt(heroImages[0].fluid.aspectRatio * 500, 10)}
+                    slideHeight={heroImages[0].gatsbyImageData.height}
+                    slightWidth={heroImages[0].gatsbyImageData.width}
                   />
                   <Container isNarrow className="pt-10 pb-16 px-6">
                     <div className="flex flex-col md:flex-row">
@@ -75,7 +74,7 @@ class WorkIndex extends React.Component {
           })}
 
         </div>
-        <LetsWork isDark />
+        <LetsWork isDark={work.length % 3} />
       </Layout>
     )
   }
@@ -93,9 +92,7 @@ export const pageQuery = graphql`
           heroImages {
             contentful_id
             title
-            fluid(maxHeight: 500, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
           description {
             childMarkdownRemark {

@@ -10,3 +10,17 @@
   position: absolute;
   top: -3vw;
 }
+
+.workDark:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4vw;
+  background-image: url(/top-black-bg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  position: absolute;
+  bottom: -3vw;
+  transform: rotate(180deg)
+}

@@ -34,8 +34,8 @@ class SpeakingIndex extends React.Component {
                 <img src="/speaking-icon.png" alt="splat" className="hidden md:block w-3/12" />
               </div>
 
-              <WorkCarousel data={speakingContent.heroImages} slideHeight={550}
-                slightWidth={parseInt(speakingContent.heroImages[0].fluid.aspectRatio * 550, 10)} />
+              <WorkCarousel data={speakingContent.heroImages} slideHeight={speakingContent.heroImages[0].gatsbyImageData.height}
+                slightWidth={speakingContent.heroImages[0].gatsbyImageData.width} />
               <p className="font-light text-lg px-6 mt-10 mb-10 md:mb-0 mx-auto w-5/6 text-center">{speakingContent.speakingTitle}</p>
               <div className="md:flex items-center py-2 px-6 mb-8 md:mb-0">
                 <img className="speakingImage pl-4 md:pl-0 md:pr-4" src="/speaking-joy.png" alt="Frank speaking at a conference" />
@@ -96,9 +96,8 @@ export const pageQuery = graphql`
           heroImages {
             contentful_id
             title
-            fluid(maxHeight: 550, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(height: 550, layout: CONSTRAINED)
+
           }
           speakingTitle
         }
@@ -146,13 +145,6 @@ export const pageQuery = graphql`
           }
           picture {
             title
-            fluid(
-              maxWidth: 100
-              maxHeight: 100
-              resizingBehavior: PAD
-            ) {
-              ...GatsbyContentfulFluid
-            }
           }
         }
       }

@@ -7,9 +7,9 @@ import Container from '../components/container'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import Brands from '../components/brands'
-import TopBackground from '../components/top-bg';
-import LetsWork from '../components/lets-work';
-import Interviews from '../components/interviews';
+import TopBackground from '../components/top-bg'
+import LetsWork from '../components/lets-work'
+import Interviews from '../components/interviews'
 import CtaButtonLink from '../components/cta-button-link'
 
 import * as styles from './home.module.css';
@@ -86,15 +86,13 @@ export const pageQuery = graphql`
             title
             file {
               url
-             
+            
             }
-            fluid(
-                maxWidth: 200
-                maxHeight: 55
-                resizingBehavior: PAD
-              ) {
-                ...GatsbyContentfulFluid
-              }
+            gatsbyImageData(
+              layout: CONSTRAINED,
+              width: 200
+            )
+
           }
         }
       }
@@ -104,13 +102,11 @@ export const pageQuery = graphql`
         node {
           heroImage {
             title
-            fluid(
-              maxWidth: 1180
-              # maxHeight: 480
-              resizingBehavior: FILL
-            ) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(
+              layout: CONSTRAINED,
+              width: 1180
+            )
+
           }
           story {
             childMarkdownRemark {

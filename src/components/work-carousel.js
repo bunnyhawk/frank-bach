@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
@@ -16,7 +16,7 @@ const WorkCarousel = ({ data, darkTheme, className, slideHeight, slightWidth }) 
       <Slider>
         {data.map((node, index) => (
           <Slide index={index} key={node.contentful_id}>
-            <Img fluid={node.fluid} className="" alt={node.title} />
+            <GatsbyImage image={node.gatsbyImageData} className="" alt={node.title} />
           </Slide>
         ))}
       </Slider>

@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
-import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
+// import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
@@ -27,17 +28,17 @@ class BlogList extends React.Component {
       }
     })
 
-    const { buttonProps, itemProps, isOpen, setIsOpen } = useDropdownMenu(tags.size)
+    // const { buttonProps, itemProps, isOpen, setIsOpen } = useDropdownMenu(tags.size)
 
     return (
       <Layout location={this.props.location}>
         <Helmet title="Blog - Frank Bach" />
         <Container isNarrow className="md:pb-24">
-          <button {...buttonProps}>Example</button>
-          <ul className={isOpen ? 'visible pt-2' : 'pt-2'} role='menu'>
+          {/* <button {...buttonProps}>Example</button> */}
+          <ul className={'visible pt-2 test'}>
             {[...tags].map((tag, index) => (
-              <li key={tag} className="mb-2" {...itemProps[index]}>
-                {tag}
+              <li key={tag} className="mb-2">
+                {tag.toLowerCase()}
               </li>
             ))}
           </ul>
@@ -49,10 +50,10 @@ class BlogList extends React.Component {
             ))}
             <li className="mb-12">
               <div className="twitter">
-                <Img
+                <GatsbyImage
                   className="block w-24 mx-auto mb-3"
                   alt={post.author.image.title}
-                  fluid={post.author.image.fluid}
+                  image={post.author.image}
                 />
                 <strong>Hey, I'm {post.author.firstName}</strong>
 
@@ -89,9 +90,7 @@ export const pageQuery = graphql`
             twitter
             image {
               title
-              fluid(maxWidth: 98) {
-                ...GatsbyContentfulFluid
-              }
+              gatsbyImageData(height: 98, layout: CONSTRAINED)
             }
           }
           title
@@ -99,9 +98,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 1200, maxHeight: 700, resizingBehavior: FILL) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(height: 700, width: 1200, layout: CONSTRAINED)
           }
           description {
             childMarkdownRemark {

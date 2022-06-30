@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
@@ -19,7 +19,7 @@ const Hype = ({ data }) => (
         {data.map(({ node, index }) => (
           <Slide index={index} key={node.contentful_id}>
             <figure className="flex items-center h-full">
-              <Img fluid={node.picture.fluid} className="mr-4 md:mr-8" alt={node.picture.title} style={{ width: 90 }} />
+              <GatsbyImage image={node.picture.gatsbyImageData} className="mr-4 md:mr-8" alt={node.picture.title} style={{ width: 90 }} />
               <div className="flex-1">
 
                 <blockquote
