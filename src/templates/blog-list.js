@@ -13,6 +13,7 @@ import ArticlePreview from '../components/article-preview'
 class BlogList extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+
     let tags = new Set()
     let firstPosts = []
     let laterPosts = []
@@ -27,8 +28,6 @@ class BlogList extends React.Component {
         laterPosts.push(post)
       }
     })
-
-    // const { buttonProps, itemProps, isOpen, setIsOpen } = useDropdownMenu(tags.size)
 
     return (
       <Layout location={this.props.location}>

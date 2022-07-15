@@ -3,20 +3,16 @@ import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
-// import useDropdownMenu from 'react-accessible-dropdown-menu-hook'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-// import Arrow from '../../static/arrow.svg'
 
 import * as styles from './blog.module.css'
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location, pageContext }) => {
 
   const posts = get(data, 'allContentfulBlogPost.edges')
-  // const { buttonProps, itemProps, isOpen } = useDropdownMenu(posts.length)
-
   let tags = new Set()
   let firstPosts = []
   let laterPosts = []
@@ -26,41 +22,41 @@ const BlogIndex = ({ data, location }) => {
   [...posts].forEach((post, index) => {
     const postTags = post.node.tags || [];
     postTags.forEach((tag) => tags.add(tag))
+
+    if (
+      !post.node.tags ||
+      (
+        pageContext.tag &&
+        !!post.node.tags &&
+        !post.node.tags.includes(pageContext.tag)
+      )
+    ) {
+      return;
+    }
+
     if (index < 2) {
       firstPosts.push(post)
     } else {
       laterPosts.push(post)
     }
   })
-  console.log(posts, tags)
 
   return (
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
       <Container isNarrow className="blogContainer mt-7 md:pb-24">
-        {/* <div className="blogMenu z1 mb-4"> */}
-        {/* <button
-            {...buttonProps}
-            className="flex rounded-t-lg text-lg font-header items-center"
-          >
-            <span className="mr-2">All posts</span>
-            <Arrow />
-          </button> */}
-        {/* <ul className={isOpen ? 'shadow-md visible rounded-b-lg' : ''}>
+        <div className="mb-4">
+          <ul className="blogMenu">
+            <li className="inline-block font-space text-sm mr-2 text-gray-400">
+              <Link to="/blog/" className="text-gray-400">All</Link>
+            </li>
             {[...tags].map((tag, index) => (
-              <li key={tag} className="font-space text-xs mb-2" {...itemProps[index]}>
-                <Link to={`/tags/${tag}`}>{tag}</Link>
+              <li key={tag} className="inline-block font-space text-sm mr-2 text-gray-400">
+                <Link to={`/blog/tags/${tag.toLowerCase()}`} className="text-gray-400">{tag}</Link>
               </li>
             ))}
-          </ul> */}
-        {/* <ul className='shadow-md visible rounded-b-lg'>
-          {[...tags].map((tag, index) => (
-            <li key={tag} className="font-space text-xs mb-2">
-              <Link to={`/tags/${tag.toLowerCase()}`}>{tag}</Link>
-            </li>
-          ))}
-        </ul> */}
-        {/* </div> */}
+          </ul>
+        </div>
         <ul>
           {firstPosts.map(({ node }) => (
             <li key={node.slug} className="mb-12">

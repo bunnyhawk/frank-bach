@@ -53,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         tags.forEach((tag) => {
           createPage({
-            path: `/tags/${tag.toLowerCase()}/`,
+            path: `/blog/tags/${tag.toLowerCase()}/`,
             component: blogList,
             context: {
               tag: tag,
