@@ -24,6 +24,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
     postTags.forEach((tag) => tags.add(tag))
 
     if (
+      pageContext.tag &&
       !post.node.tags ||
       (
         pageContext.tag &&
@@ -45,7 +46,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
     <Layout location={location}>
       <Helmet title="Blog - Frank Bach" />
       <Container isNarrow className="blogContainer mt-7 md:pb-24">
-        <div className="mb-4">
+        <div className="mb-4 mx-4">
           <ul className="blogMenu">
             <li className="inline-block font-space text-sm mr-2 text-gray-400">
               <Link to="/blog/" className="text-gray-400">All</Link>
