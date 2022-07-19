@@ -25,7 +25,8 @@ class WorkIndex extends React.Component {
                 <ul>
                   <li className="pb-6">In my work, I balance human needs, business goals, and technology. If you put people in the centre, the rest of the pieces fall into place.</li>
                   <li className="pb-6">Keep things iterative, flexible and collaborative. Be open to hearing other's ideas.</li>
-                  <li className="pb-6">Rely on your gut for experimentation, but let data guide decision-making. Measure what matters (but not everything that matters is measurable).</li>
+                  <li className="pb-6">Rely on your gut for experimentation, but let data guide decision-making.</li>
+                  <li className="pb-6">Measure what matters (but not everything that matters is measurable).</li>
                   <li className="pb-6">Below is a small selection of work and teams I've been a part of over the past decade. <span role="img" aria-label="Down arrow">⤵️</span></li>
                 </ul>
               </div>
