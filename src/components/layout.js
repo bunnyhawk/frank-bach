@@ -42,7 +42,7 @@ const Template = ({ children, workTitles, isShort }) => {
         <link rel="preload" href="/fonts/SpaceMono-BoldItalic.ttf" as="font" type="font/ttf" crossorigin />
         <link rel="preload" href="/fonts/SpaceMono-Italic.ttf" as="font" type="font/ttf" crossorigin />
         <link rel="preload" href="/fonts/SpaceMono-Regular.ttf" as="font" type="font/ttf" crossorigin />
-        
+        <script id="mcjs">{`!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/b2ac57f991427e5f4a30aab6f/f2db8796c444cca9514807730.js");`}</script>
       </Helmet>
       <Header />
 
@@ -51,7 +51,7 @@ const Template = ({ children, workTitles, isShort }) => {
 
 
       <Footer />
-      <script id="mcjs">{`!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/b2ac57f991427e5f4a30aab6f/f2db8796c444cca9514807730.js");`}</script>
+      
     </div>
   )
 }
